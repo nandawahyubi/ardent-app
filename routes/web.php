@@ -15,4 +15,16 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
+
+Route::get('login', function () {
+    return view('auth\user\login');
+})->name('login');
+
+Route::get('checkout', function () {
+    return view('checkout\create');
+})->name('checkout');
+
+Route::get('success-checkout', function () {
+    return view('checkout\success');
+})->name('success-checkout');
