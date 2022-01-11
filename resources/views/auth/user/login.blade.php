@@ -26,7 +26,7 @@
                             <h1 class="header">Start Today</h1>
                             <h6 class="subheader">Because tomorrow become never</h6>
                     </div>
-                    <a class="btn btn-light" href="">
+                    <a class="btn btn-light" href="{{ route('user.login.google') }}">
                         <img src="{{ asset('img/ic_google.svg') }}" class="icon" alt=""> Sign In with Google
                     </a>
                     <div class="licensi">
