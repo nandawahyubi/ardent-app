@@ -678,7 +678,7 @@
             <div class="row justify-content-between">
                 <div class="col-md">
                     <div class="footer-child">
-                        <a href="">
+                        <a href="{{ route('welcome') }}">
                             <img src="{{ asset('img/logo-navbar.png') }}" width="220" height="60" alt="logo">
                         </a>
                         <div>
