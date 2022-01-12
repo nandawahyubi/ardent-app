@@ -1,4 +1,6 @@
-@extends('layouts.default') @section('content')
+@extends('layouts.default') 
+
+@section('content')
 <section class="dashboard my-5">
     <div class="container">
         <div class="row text-left">
@@ -8,13 +10,13 @@
             </div>
         </div>
         <div class="row my-4 table-responsive">
-            @include('components.alert')
+            {{-- @include('components.alert') --}}
             <table class="table table-responsive">
                 <thead>
                     <tr class="align-middle">
                         <th scope="col" colspan="2" class="text-center">Package Name</th>
                         <th scope="col" class="text-center">Order Schedule</th>
-                        <th scope="col" class="text-center">Schedule Complete</th>
+                        <th scope="col" class="text-center">Nominal Dp</th>
                         <th scope="col" class="text-center">Information</th>
                         <th scope="col"></th>
                     </tr>
@@ -35,7 +37,7 @@
                             <span>{{ date('d M Y', strtotime($checkout->order_schedule)) }}</span>
                         </td>
                         <td class="text-center">
-                            <span>{{ date('d M Y', strtotime($checkout->order_schedule_complate)) }}</span>
+                            <span>{{ $checkout->Package->price }}K</span>
                         </td>
                         <td class="text-center">
                             @if ($checkout->is_paid == 1)
@@ -48,10 +50,10 @@
                         </td>
                         <td class="text-center">
                             <a href="#" class="btn btn-warning">Pay Here</a>
-                            <a href="https://wa.me/082272417131?text=Hi, saya ingin bertanya tentang paket {{ $checkout->Package->title }}"
-                                class="btn">
+                            <a href="https://wa.me/082272417131?text=Hi, saya ingin bertanya tentang paket {{ $checkout->Package->title }}" class="btn">
                                 <i class="fas fa-headset fa-2x text-primary"></i>
                             </a>
+                            <a href="#" class="btn btn-secondary">Invoice</a>
                         </td>
                     </tr>
                     @empty

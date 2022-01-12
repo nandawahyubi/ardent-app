@@ -455,7 +455,8 @@
                                 </li>
                             </ul>
                             <div class="row justify-content-center my-3">
-                                <a href="{{ route('checkout') }}" class="btn btn-warning rounded-pill text-light w-75">
+                                <a href="{{ route('checkout.create', 'signature-nano-ceramic-coating') }}"
+                                    class="btn btn-warning rounded-pill text-light w-75">
                                     choose this package
                                 </a>
                             </div>
@@ -504,7 +505,8 @@
                                 </li>
                             </ul>
                             <div class="row justify-content-center my-3">
-                                <a href="{{ route('checkout') }}" class="btn btn-warning rounded-pill text-light w-75">
+                                <a href="{{ route('checkout.create', 'signature-nano-crystal-based-coating') }}"
+                                    class="btn btn-warning rounded-pill text-light w-75">
                                     choose this package
                                 </a>
                             </div>
@@ -552,7 +554,8 @@
                                 </li>
                             </ul>
                             <div class="row justify-content-center my-3">
-                                <a href="{{ route('checkout') }}" class="btn btn-light rounded-pill text-warning w-75">
+                                <a href="{{ route('checkout.create', 'signature-diamond-coating') }}"
+                                    class="btn btn-light rounded-pill text-warning w-75">
                                     choose this package
                                 </a>
                             </div>
