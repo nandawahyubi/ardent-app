@@ -17,8 +17,8 @@
                         <th scope="col" colspan="2" class="text-center">Package Name</th>
                         <th scope="col" class="text-center">Order Schedule</th>
                         <th scope="col" class="text-center">Nominal Dp</th>
-                        <th scope="col" class="text-center">Information</th>
-                        <th scope="col"></th>
+                        <th scope="col" class="text-center">Statuation</th>
+                        <th scope="col" class="text-center">Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -37,7 +37,7 @@
                             <span>{{ date('d M Y', strtotime($checkout->order_schedule)) }}</span>
                         </td>
                         <td class="text-center">
-                            <span>{{ $checkout->Package->price }}K</span>
+                            <span>Rp {{ $checkout->Package->price }}.000</span>
                         </td>
                         <td class="text-center">
                             @if ($checkout->is_paid == 1)
