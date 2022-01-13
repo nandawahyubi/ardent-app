@@ -495,7 +495,8 @@ p {
 /* dashboard */
 .dashboard .btn-warning,
 .dashboard .btn-secondary,
-.dashboard .btn-success {
+.dashboard .btn-success,
+.dashboard .btn-danger {
     padding: 10px 15px;
     border-radius: 100px;
     border: 0;

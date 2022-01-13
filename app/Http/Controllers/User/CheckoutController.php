@@ -32,7 +32,7 @@ class CheckoutController extends Controller
     {
         if($package->isOrder){
             $request->session()->flash('error', "You can only booking once until your booking is finished.");
-            return redirect(route('dashboard'));
+            return redirect(route('user.dashboard'));
         }
         return view('checkout\create', [
             'package' => $package

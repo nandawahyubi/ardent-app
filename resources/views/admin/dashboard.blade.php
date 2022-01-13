@@ -15,10 +15,9 @@
                             <thead>
                                 <tr>
                                     <th>User</th>
-                                    <th>Package</th>
+                                    <th>Package Name</th>
                                     <th class="text-center">Order Schedule</th>
-                                    <th class="text-center">Schedule Complete</th>
-                                    <th class="text-center">Information</th>
+                                    <th class="text-center">Statuation</th>
                                     <th class="text-center">Action</th>
                                 </tr>
                             </thead>
@@ -29,9 +28,6 @@
                                     <td>{{ $checkout->Package->title }}</td>
                                     <td class="text-center">
                                         {{ date('d M Y', strtotime($checkout->order_schedule)) }}
-                                    </td>
-                                    <td class="text-center">
-                                        {{ date('d M Y', strtotime($checkout->order_schedule_complate)) }}
                                     </td>
                                     <td class="text-center">
                                         @if ($checkout->is_paid == 1)
@@ -53,6 +49,8 @@
                                             <button class="button btn-success btn-sm" onclick="updateStatustoFinished({{ $checkout->id }})">Set to Finished</button>
                                             @endif
                                         @endif
+                                        <a href="#" class="btn btn-secondary">Edit</a>
+                                        <a href="#" class="btn btn-danger">Delete</a>
                                     </td>
                                 </tr>
                                 @empty

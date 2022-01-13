@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\User\CheckoutController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\User\DashboardController as UserDashboard;
+use App\Http\Controllers\Admin\DashboardController as AdminDashboard;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,6 +36,19 @@ Route::middleware(['auth'])->group(function () {
     
     // dashboard
     Route::get('dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
+
+    // user dashboard
+    Route::prefix('user/dashboard')->namespace('User')->name('user.')->group(function () {
+        Route::get('/', [UserDashboard::class, 'index'])->name('dashboard');
+    });
+
+    // admin dashboard
+    Route::prefix('admin/dashboard')->namespace('Admin')->name('admin.')->group(function () {
+        Route::get('/', [AdminDashboard::class, 'index'])->name('dashboard');
+
+        // admin checkout
+        Route::post('checkout/{checkout}', [AdminCheckout::class, 'update'])->name('checkout.update');
+    });
 });
 
 require __DIR__.'/auth.php';
