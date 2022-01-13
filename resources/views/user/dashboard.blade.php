@@ -41,11 +41,11 @@
                         </td>
                         <td class="text-center">
                             @if ($checkout->status == 1)
-                            <span class="text-warning">On Progress</span>
+                            <span class="badge rounded-pill bg-warning text-dark">On Progress</span>
                             @elseif ($checkout->status == 2)
-                            <span class="text-success">Finished</span>
+                            <span class="badge rounded-pill bg-success">Finished</span>
                             @else
-                            <span class="text-danger">Waiting</span>
+                            <span class="badge rounded-pill bg-danger">Waiting</span>
                             @endif
                         </td>
                         <td class="text-center">
