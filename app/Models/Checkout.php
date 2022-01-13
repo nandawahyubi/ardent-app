@@ -19,7 +19,7 @@ class Checkout extends Model
         'production_year',
         'number_plate',
         'order_schedule',
-        'is_paid',
+        'status',
     ];
 
     /**

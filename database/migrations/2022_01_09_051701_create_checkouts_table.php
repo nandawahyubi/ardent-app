@@ -22,7 +22,7 @@ class CreateCheckoutsTable extends Migration
             $table->bigInteger('production_year');
             $table->string('number_plate', 25);
             $table->date('order_schedule');
-            $table->boolean('is_paid')->default(false);
+            $table->boolean('status')->default(false);
             $table->timestamps();
             $table->softDeletes();
         });

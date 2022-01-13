@@ -23,6 +23,6 @@ class Package extends Model
             return false;
         }
 
-        return Checkout::whereUserId(Auth::id())->where('is_paid', '<', 2)->orderBy('id', 'desc')->exists();
+        return Checkout::whereUserId(Auth::id())->where('status', '<', 2)->orderBy('id', 'desc')->exists();
     }
 }

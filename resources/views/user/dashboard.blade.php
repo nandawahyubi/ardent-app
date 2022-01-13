@@ -40,9 +40,9 @@
                             <span>Rp {{ $checkout->Package->price }}.000</span>
                         </td>
                         <td class="text-center">
-                            @if ($checkout->is_paid == 1)
+                            @if ($checkout->status == 1)
                             <span class="text-warning">On Progress</span>
-                            @elseif ($checkout->is_paid == 2)
+                            @elseif ($checkout->status == 2)
                             <span class="text-success">Finished</span>
                             @else
                             <span class="text-danger">Waiting</span>

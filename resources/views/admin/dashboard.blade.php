@@ -17,6 +17,7 @@
                                     <th>User</th>
                                     <th>Package Name</th>
                                     <th class="text-center">Order Schedule</th>
+                                    <th class="text-center">Paid Status</th>
                                     <th class="text-center">Statuation</th>
                                     <th class="text-center">Action</th>
                                 </tr>
@@ -30,22 +31,30 @@
                                         {{ date('d M Y', strtotime($checkout->order_schedule)) }}
                                     </td>
                                     <td class="text-center">
-                                        @if ($checkout->is_paid == 1)
+                                        {{-- @if ($checkout->status)
+                                        <span class="badge rounded-pill bg-success">Payment Success</span>
+                                        @else
+                                        <span class="badge rounded-pill bg-warning text-dark">Waiting for Payment</span>
+                                        @endif --}}
+                                        <span class="badge rounded-pill bg-success">Payment Success</span>
+                                    </td>
+                                    <td class="text-center">
+                                        @if ($checkout->status == 1)
                                         <span class="text-warning">On Progress</span>
-                                        @elseif ($checkout->is_paid == 2)
+                                        @elseif ($checkout->status == 2)
                                         <span class="text-success">Finished</span>
                                         @else
                                         <span class="text-danger">Waiting</span>
                                         @endif
                                     </td>
                                     <td class="text-center">
-                                        @if ($checkout->is_paid < 2) 
+                                        @if ($checkout->status < 2) 
                                         <form id="updateCheckout{{ $checkout->id }}" action="{{ route('admin.checkout.update', $checkout->id) }}" method="post">
                                             @csrf
                                         </form>
-                                            @if ($checkout->is_paid == 0)
+                                            @if ($checkout->status == 0)
                                             <button class="button btn-warning btn-sm" onclick="updateStatustoProgress({{ $checkout->id }})">Set to Progress</button>
-                                            @elseif ($checkout->is_paid == 1)
+                                            @elseif ($checkout->status == 1)
                                             <button class="button btn-success btn-sm" onclick="updateStatustoFinished({{ $checkout->id }})">Set to Finished</button>
                                             @endif
                                         @endif
