@@ -7,6 +7,7 @@ use App\Models\Checkout;
 use Illuminate\Http\Request;
 use App\Models\Package;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\User\Checkout\Store;
 
 class CheckoutController extends Controller
 {
@@ -27,6 +28,10 @@ class CheckoutController extends Controller
      */
     public function create(Request $request, Package $package)
     {
+        if($package->isOrder){
+            $request->session()->flash('error', "You can only booking once until your booking is finished.");
+            return redirect(route('dashboard'));
+        }
         return view('checkout\create', [
             'package' => $package
         ]);
@@ -38,7 +43,7 @@ class CheckoutController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, Package $package)
+    public function store(Store $request, Package $package)
     {
         $data = $request->all();
         $data['user_id'] = Auth::id();

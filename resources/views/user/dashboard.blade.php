@@ -10,7 +10,7 @@
             </div>
         </div>
         <div class="row my-4 table-responsive">
-            {{-- @include('components.alert') --}}
+            @include('components.alert')
             <table class="table table-responsive">
                 <thead>
                     <tr class="align-middle">
