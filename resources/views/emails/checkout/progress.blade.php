@@ -1,9 +1,8 @@
 @component('mail::message')
-# Choose Package : {{ $checkout->Package->title }}
+# We Start Working On Your Order
 
 Hi, {{ $checkout->User->name }}<br>
-Thank you for choosing <b>{{ $checkout->Package->title }}</b>, please see payment instruction by click the button
-bellow.
+You just need to wait for your vehicle to be finished for the 3-4 next days. 
 
 @component('mail::button', ['url' => route('user.dashboard')])
 My Dashboard
