@@ -20,6 +20,9 @@ class Checkout extends Model
         'number_plate',
         'order_schedule',
         'status',
+        'payment_status',
+        'midtrans_url',
+        'midtrans_booking_code',
     ];
 
     /**
