@@ -17,8 +17,9 @@
                         <th scope="col" colspan="2" class="text-center">Package Name</th>
                         <th scope="col" class="text-center">Order Schedule</th>
                         <th scope="col" class="text-center">Nominal Dp</th>
+                        <th scope="col" class="text-center">Payment Status</th>
                         <th scope="col" class="text-center">Statuation</th>
-                        <th scope="col" class="text-center">Action</th>
+                        <th scope="col" colspan="3" class="text-center">Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -40,20 +41,35 @@
                             <span>Rp {{ $checkout->Package->price }}.000</span>
                         </td>
                         <td class="text-center">
-                            @if ($checkout->status == 1)
-                            <span class="badge rounded-pill bg-warning text-dark">On Progress</span>
-                            @elseif ($checkout->status == 2)
-                            <span class="badge rounded-pill bg-success">Finished</span>
-                            @else
-                            <span class="badge rounded-pill bg-danger">Waiting</span>
+                            @if ($checkout->payment_status == 'waiting' || $checkout->payment_status == 'pending')
+                            <span class="badge rounded-pill bg-warning text-dark">{{ $checkout->payment_status }}</span>
+                            @elseif ($checkout->payment_status == 'paid')
+                            <span class="badge rounded-pill bg-success">{{ $checkout->payment_status }}</span>
+                            @elseif ($checkout->payment_status == 'failed')
+                            <span class="badge rounded-pill bg-danger">{{ $checkout->payment_status }}</span>
                             @endif
                         </td>
                         <td class="text-center">
-                            <a href="#" class="btn btn-warning">Pay Here</a>
-                            <a href="https://wa.me/082272417131?text=Hi, saya ingin bertanya tentang paket {{ $checkout->Package->title }}" class="btn">
+                            @if ($checkout->status == 0)
+                            <span class="badge rounded-pill bg-danger">Waiting In Line</span>
+                            @elseif ($checkout->status == 1)
+                            <span class="badge rounded-pill bg-warning text-dark">On Progress</span>
+                            @elseif ($checkout->status == 2)
+                            <span class="badge rounded-pill bg-success">Finished</span>
+                            @endif
+                        </td>
+                        <td class="text-center">
+                            @if ($checkout->payment_status == 'waiting')
+                                <a href="{{ $checkout->midtrans_url }}" class="btn btn-warning" style="width: 105px">Pay Here</a>
+                            @endif
+                        </td>
+                        <td class="text-center">
+                            <a href="https://wa.me/082272417131?text=Hi, saya ingin bertanya tentang paket {{ $checkout->Package->title }}" class="btn px-0">
                                 <i class="fas fa-headset fa-2x text-primary"></i>
                             </a>
-                            <a href="#" class="btn btn-secondary">Invoice</a>
+                        </td>
+                        <td class="text-center">
+                            <a href="#" class="btn btn-secondary" style="width: 105px">Invoice</a>
                         </td>
                     </tr>
                     @empty
