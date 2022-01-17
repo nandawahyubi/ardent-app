@@ -31,20 +31,21 @@
                                         {{ date('d M Y', strtotime($checkout->order_schedule)) }}
                                     </td>
                                     <td class="text-center">
-                                        {{-- @if ($checkout->status)
-                                        <span class="badge rounded-pill bg-success">Payment Success</span>
-                                        @else
-                                        <span class="badge rounded-pill bg-warning text-dark">Waiting for Payment</span>
-                                        @endif --}}
-                                        <span class="badge rounded-pill bg-success">Payment Success</span>
+                                        @if ($checkout->payment_status == 'waiting' || $checkout->payment_status == 'pending')
+                                        <span class="badge rounded-pill bg-warning text-dark">{{ $checkout->payment_status }}</span>
+                                        @elseif ($checkout->payment_status == 'paid')
+                                        <span class="badge rounded-pill bg-success">{{ $checkout->payment_status }}</span>
+                                        @elseif ($checkout->payment_status == 'failed')
+                                        <span class="badge rounded-pill bg-danger">{{ $checkout->payment_status }}</span>
+                                        @endif
                                     </td>
                                     <td class="text-center">
-                                        @if ($checkout->status == 1)
+                                        @if ($checkout->status == 0)
+                                        <span class="badge rounded-pill bg-danger">Waiting In Line</span>
+                                        @elseif ($checkout->status == 1)
                                         <span class="badge rounded-pill bg-warning text-dark">On Progress</span>
                                         @elseif ($checkout->status == 2)
                                         <span class="badge rounded-pill bg-success">Finished</span>
-                                        @else
-                                        <span class="badge rounded-pill bg-danger">Waiting</span>
                                         @endif
                                     </td>
                                     <td class="text-center">
