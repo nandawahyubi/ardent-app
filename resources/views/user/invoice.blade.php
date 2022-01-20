@@ -5,7 +5,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css') }}" />
-        <title>Get My Invoice</title>
+        <link rel="shortcut icon" href="{{ asset('img/laravel.png') }}" />
+        <title>Invoice | Ardent Auto Detailing</title>
         <style>
             @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
             * {
@@ -34,6 +35,7 @@
     <body>
         <section class="invoice">
             <div class="container px-3">
+                @foreach ($checkouts as $checkout)
                 <div class="row m-0 pb-3 border-bottom border-dark">
                     <div class="col-7 p-0">
                         <img
@@ -42,11 +44,11 @@
                             height="60"
                             alt="logo ardent"
                         />
-                        <h4 class="mb-0">#ADT41807</h4>
+                        <h4 class="mb-0 text-uppercase">{{ $checkout->midtrans_booking_code }}</h4>
                         <p class="mt-1 mb-0">
                             Package :
                             <strong>
-                                Signature Nano Ceramic Coating By Crystal Shield
+                                {{ $checkout->Package->title }} By Crystal Shield
                             </strong>
                         </p>
                     </div>
@@ -68,10 +70,10 @@
                     <div class="col p-0 text-end">
                         <p class="mb-0 text-blue">Bill To:</p>
                         <p class="mb-0">
-                            <strong>Nanda Wahyubi</strong>
+                            <strong>{{ $checkout->User->name }}</strong>
                         </p>
-                        <p class="mb-0">nandawahyubi.work@gmail.com</p>
-                        <p class="mb-0">(+62) 8123456789</p>
+                        <p class="mb-0">{{ $checkout->User->email }}</p>
+                        <p class="mb-0">{{ $checkout->User->no_telp }}</p>
                         <p class="mb-0">Customer</p>
                     </div>
                 </div>
@@ -93,10 +95,10 @@
                                             1
                                         </th>
                                         <td width="63%">
-                                            Signature Nano Ceramic Coating By
+                                            {{ $checkout->Package->title }} By
                                             Crystal Shield
                                         </td>
-                                        <td width="20%">IDR 500.000</td>
+                                        <td width="20%">IDR {{ $checkout->Package->price }}.000</td>
                                         <td class="text-center" width="10%">
                                             1
                                         </td>
@@ -127,11 +129,11 @@
                                         <th class="text-center" width="7%">
                                             1
                                         </th>
-                                        <td>Pajero Sport</td>
-                                        <td>Putih</td>
-                                        <td>2025</td>
-                                        <td>BK212TT</td>
-                                        <td>25-01-2022</td>
+                                        <td>{{ $checkout->vehicle_brand }}</td>
+                                        <td class="text-capitalize">{{ $checkout->vehicle_color }}</td>
+                                        <td>{{ $checkout->production_year }}</td>
+                                        <td class="text-uppercase">{{ $checkout->number_plate }}</td>
+                                        <td>{{ $checkout->order_schedule }}</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -155,6 +157,7 @@
                         </a>
                     </p>
                 </div>
+                @endforeach
             </div>
         </section>
 

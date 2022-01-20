@@ -45,7 +45,7 @@ class CheckoutController extends Controller
             $request->session()->flash('error', "You can only booking once until your booking is finished.");
             return redirect(route('user.dashboard'));
         }
-        return view('checkout\create', [
+        return view('checkout.create', [
             'package' => $package
         ]);
     }
@@ -127,7 +127,7 @@ class CheckoutController extends Controller
 
     public function success()
     {
-        return view('checkout\success');
+        return view('checkout.success');
     }
 
     /**
@@ -235,6 +235,6 @@ class CheckoutController extends Controller
         }
 
         $checkout->save();
-        return view('checkout\success');
+        return view('checkout.success');
     }
 }

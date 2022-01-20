@@ -44,6 +44,8 @@ Route::middleware(['auth'])->group(function () {
     // user dashboard
     Route::prefix('user/dashboard')->namespace('User')->name('user.')->middleware('ensureUserRole:user')->group(function () {
         Route::get('/', [UserDashboard::class, 'index'])->name('dashboard');
+
+        Route::get('invoice/{checkout:midtrans_boooking_code}', [UserDashboard::class, 'invoice'])->name('get.invoice');
     });
 
     // admin dashboard

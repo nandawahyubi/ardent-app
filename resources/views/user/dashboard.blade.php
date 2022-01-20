@@ -69,7 +69,11 @@
                             </a>
                         </td>
                         <td class="text-center">
-                            <a href="#" class="btn btn-secondary" style="width: 105px">Invoice</a>
+                            @if ($checkout->payment_status == 'paid')
+                            <a href="{{ route('user.get.invoice', $checkout->midtrans_booking_code) }}" class="btn btn-secondary" style="width: 105px" target="_blank">
+                                Invoice
+                            </a>
+                            @endif
                         </td>
                     </tr>
                     @empty

@@ -11,7 +11,7 @@
                     </div>
                     <div class="card-body">
                         @include('components.alert')
-                        <table class="table">
+                        <table class="table table-responsive">
                             <thead>
                                 <tr>
                                     <th>User</th>
@@ -49,14 +49,20 @@
                                         @endif
                                     </td>
                                     <td class="text-center">
-                                        @if ($checkout->status < 2) 
-                                        <form id="updateCheckout{{ $checkout->id }}" action="{{ route('admin.checkout.update', $checkout->id) }}" method="post">
-                                            @csrf
-                                        </form>
-                                            @if ($checkout->status == 0)
-                                            <button class="button btn-warning btn-sm" onclick="updateStatustoProgress({{ $checkout->id }})">Set to Progress</button>
-                                            @elseif ($checkout->status == 1)
-                                            <button class="button btn-success btn-sm" onclick="updateStatustoFinished({{ $checkout->id }})">Set to Finished</button>
+                                        @if ($checkout->payment_status == 'paid')
+                                            @if ($checkout->status < 2) 
+                                                <form id="updateCheckout{{ $checkout->id }}" action="{{ route('admin.checkout.update', $checkout->id) }}" method="post">
+                                                    @csrf
+                                                </form>
+                                                @if ($checkout->status == 0)
+                                                <button class="button btn-warning btn-sm" onclick="updateStatustoProgress({{ $checkout->id }})">
+                                                    Set to Progress
+                                                </button>
+                                                @elseif ($checkout->status == 1)
+                                                <button class="button btn-success btn-sm" onclick="updateStatustoFinished({{ $checkout->id }})">
+                                                    Set to Finished
+                                                </button>
+                                                @endif
                                             @endif
                                         @endif
                                         <a href="#" class="btn btn-secondary">Edit</a>
