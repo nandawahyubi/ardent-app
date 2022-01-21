@@ -13,7 +13,7 @@ class UserController extends Controller
 {
     public function login()
     {
-        return view('auth\user\login');
+        return view('auth.user.login');
     }
 
     public function google()
