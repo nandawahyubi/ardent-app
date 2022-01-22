@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use App\Models\User;
+use App\Models\Checkout;
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,11 +15,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
         $this->call([
             PackageTableSeeder::class,
             PackageBenefitTableSeeder::class,
             AdminUserSeeder::class
         ]);
+        // User::factory(9)->create();
+        // Checkout::factory(15)->create();
     }
 }

@@ -32,6 +32,7 @@
     <script src="{{ asset('js/sweetalert.js') }}"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.17.2/dist/sweetalert2.all.min.js"></script>
+
 </body>
 
 </html>
