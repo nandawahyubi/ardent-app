@@ -33,4 +33,16 @@ class CheckoutController extends Controller
             return redirect(route('admin.dashboard'));
         }
     }
+
+    public function destroy(Checkout $checkout)
+    {
+        // 1nd step
+        // Checkout::destroy($checkout->id);
+
+        // 2nd step
+        $data = Checkout::findorfail($checkout->id);
+        $data->delete();
+        
+        return back()->with('success', "Checkout with ID {$checkout->id} has been deleted!");
+    }
 }

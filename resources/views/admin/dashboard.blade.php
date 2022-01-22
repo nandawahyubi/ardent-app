@@ -68,7 +68,11 @@
                                     </td>
                                     <td class="text-center">
                                         <a href="#" class="btn btn-secondary shadow m-1"><i class="fas fa-pen-square"></i></a>
-                                        <a href="#" class="btn btn-danger shadow m-1"><i class="fas fa-trash"></i></a>
+                                        <form id="deleteCheckout{{ $checkout->id }}" action="{{ route('admin.checkout.delete', $checkout->id) }}" method="post" class="d-inline">
+                                            @method('delete')
+                                            @csrf
+                                        </form>
+                                        <button class="btn btn-danger shadow m-1" onclick="deleteCheckout({{ $checkout->id }})"><i class="fas fa-trash"></i></button>
                                     </td>
                                 </tr>
                                 @empty

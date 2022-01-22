@@ -30,7 +30,7 @@ class Store extends FormRequest
             'no_telp'           => 'required|numeric',
             'address'           => 'required|string',
             'vehicle_brand'     => 'required|string',
-            'vehicle_color'     => 'required|alpha',
+            'vehicle_color'     => 'required|string',
             'production_year'   => 'required|numeric|gt:0', // fungsi gt:0 agar nilai tidak boleh kurang dari nol atau minus
             'number_plate'      => 'required|string',
             'order_schedule'    => 'required|',

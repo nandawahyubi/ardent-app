@@ -31,3 +31,20 @@ function updateStatustoFinished(id){
         }
     });
 }
+
+function deleteCheckout(id){
+    Swal.fire({
+        title: "Want To Delete",
+        text : "Deleted Data Cannot Be Recovered",
+        icon: "question",
+        showCancelButton: true,
+        confirmButtonColor: "#d33",
+        confirmButtonText: "Yes",
+        cancelButtonColor: "#3085d6",
+        cancelButtonText: "Cancel",
+    }).then((result) => {
+        if (result.isConfirmed) {
+            $('#deleteCheckout'+id).submit();
+        }
+    });
+}
