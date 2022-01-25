@@ -26,7 +26,7 @@
                 </li>
             </ul>
             @auth
-            <div class="d-flex user-logged dropdown no-arrow">
+            <div class="d-flex user-logged dropdown no-arrow flex justify-content-center">
                 <a href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                     Halo, {{ Auth::user()->name }}!
                     @if (Auth::user()->avatar)
@@ -35,7 +35,7 @@
                     <img src="https://ui-avatars.com/api/?name=Admin" class="user-photo rounded-circle" alt="">
                     @endif
                 </a>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink" style="right: 0; left: auto;">
+                <ul class="dropdown-menu text-center" aria-labelledby="dropdownMenuLink" style="left: auto;">
                     <li>
                         <a class="dropdown-item" href="{{ route('dashboard') }}">My Dashboard</a>
                     </li>

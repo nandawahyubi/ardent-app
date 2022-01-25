@@ -27,52 +27,56 @@
                                 <tr class="align-middle">
                                     <td>{{ $checkout->User->name }}</td>
                                     <td>{{ $checkout->Package->title }}</td>
-                                    <td class="text-center">
-                                        {{ date('d M Y', strtotime($checkout->order_schedule)) }}
-                                    </td>
+                                    <td class="text-center">{{ date('d M Y', strtotime($checkout->order_schedule)) }}</td>
                                     <td class="text-center">
                                         @if ($checkout->payment_status == 'waiting' || $checkout->payment_status == 'pending')
-                                        <span class="badge rounded-pill bg-warning text-dark shadow">{{ $checkout->payment_status }}</span>
+                                            <span class="badge rounded-pill bg-warning text-dark shadow">{{ $checkout->payment_status }}</span>
                                         @elseif ($checkout->payment_status == 'paid')
-                                        <span class="badge rounded-pill bg-success shadow">{{ $checkout->payment_status }}</span>
+                                            <span class="badge rounded-pill bg-success shadow">{{ $checkout->payment_status }}</span>
                                         @elseif ($checkout->payment_status == 'failed')
-                                        <span class="badge rounded-pill bg-danger shadow">{{ $checkout->payment_status }}</span>
+                                            <span class="badge rounded-pill bg-danger shadow">{{ $checkout->payment_status }}</span>
                                         @endif
                                     </td>
                                     <td class="text-center">
                                         @if ($checkout->status == 0)
-                                        <span class="badge rounded-pill bg-danger shadow">Waiting In Line</span>
+                                            <span class="badge rounded-pill bg-danger shadow">Waiting In Line</span>
                                         @elseif ($checkout->status == 1)
-                                        <span class="badge rounded-pill bg-warning text-dark shadow">On Progress</span>
+                                            <span class="badge rounded-pill bg-warning text-dark shadow">On Progress</span>
                                         @elseif ($checkout->status == 2)
-                                        <span class="badge rounded-pill bg-success shadow">Finished</span>
+                                            <span class="badge rounded-pill bg-success shadow">Finished</span>
                                         @endif
                                     </td>
                                     <td class="text-center p-0">
                                         @if ($checkout->payment_status == 'paid')
                                             @if ($checkout->status < 2) 
-                                                <form id="updateCheckout{{ $checkout->id }}" action="{{ route('admin.checkout.update', $checkout->id) }}" method="post">
+                                                <form id="updateCheckout{{ $checkout->id }}" action="{{ route('admin.checkout.change', $checkout->id) }}" method="post">
                                                     @csrf
                                                 </form>
                                                 @if ($checkout->status == 0)
-                                                <button class="btn btn-warning btn-sm shadow" onclick="updateStatustoProgress({{ $checkout->id }})">
-                                                    Set to Progress
-                                                </button>
+                                                    <button class="btn btn-warning btn-sm shadow" onclick="updateStatustoProgress({{ $checkout->id }})">
+                                                        Set to Progress
+                                                    </button>
                                                 @elseif ($checkout->status == 1)
-                                                <button class="btn btn-success btn-sm shadow" onclick="updateStatustoFinished({{ $checkout->id }})">
-                                                    Set to Finished
-                                                </button>
+                                                    <button class="btn btn-success btn-sm shadow" onclick="updateStatustoFinished({{ $checkout->id }})">
+                                                        Set to Finished
+                                                    </button>
                                                 @endif
                                             @endif
                                         @endif
                                     </td>
-                                    <td class="text-center">
-                                        <a href="#" class="btn btn-secondary shadow m-1"><i class="fas fa-pen-square"></i></a>
-                                        <form id="deleteCheckout{{ $checkout->id }}" action="{{ route('admin.checkout.delete', $checkout->id) }}" method="post" class="d-inline">
+                                    <td class="text-center d-flex">
+                                        @if (!$checkout->status)
+                                            <a href="{{ route('admin.checkout.edit', $checkout->id) }}" class="btn btn-secondary shadow m-1">
+                                                <i class="fas fa-pen-square"></i>
+                                            </a>
+                                        @endif
+                                        <form id="deleteCheckout{{ $checkout->id }}" action="{{ route('admin.checkout.delete', $checkout->id) }}" method="post">
                                             @method('delete')
                                             @csrf
                                         </form>
-                                        <button class="btn btn-danger shadow m-1" onclick="deleteCheckout({{ $checkout->id }})"><i class="fas fa-trash"></i></button>
+                                        <button class="btn btn-danger shadow m-1" onclick="deleteCheckout({{ $checkout->id }})">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
                                     </td>
                                 </tr>
                                 @empty

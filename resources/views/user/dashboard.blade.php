@@ -11,7 +11,7 @@
         </div>
         <div class="row my-4 table-responsive">
             @include('components.alert')
-            <table class="table table-responsive">
+            <table class="table text-nowrap">
                 <thead>
                     <tr class="align-middle">
                         <th scope="col" colspan="2" class="text-center">Package Name</th>

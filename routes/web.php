@@ -52,8 +52,10 @@ Route::middleware(['auth'])->group(function () {
     Route::prefix('admin/dashboard')->namespace('Admin')->name('admin.')->middleware('ensureUserRole:admin')->group(function () {
         Route::get('/', [AdminDashboard::class, 'index'])->name('dashboard');
 
-        Route::post('checkout/{checkout}', [AdminCheckout::class, 'update'])->name('checkout.update');
+        Route::post('checkout/{checkout}', [AdminCheckout::class, 'change'])->name('checkout.change');
         Route::delete('checkout/{checkout}', [AdminCheckout::class, 'destroy'])->name('checkout.delete');
+        Route::get('checkout/{checkout}', [AdminCheckout::class, 'edit'])->name('checkout.edit');
+        Route::put('checkout/{checkout}', [AdminCheckout::class, 'update'])->name('checkout.update');
     });
 });
 
