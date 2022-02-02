@@ -45,7 +45,7 @@ Route::middleware(['auth'])->group(function () {
     Route::prefix('user/dashboard')->namespace('User')->name('user.')->middleware('ensureUserRole:user')->group(function () {
         Route::get('/', [UserDashboard::class, 'index'])->name('dashboard');
 
-        Route::get('invoice/{checkout:midtrans_boooking_code}', [UserDashboard::class, 'invoice'])->name('get.invoice');
+        Route::get('invoice/{checkout:midtrans_booking_code}', [UserDashboard::class, 'invoice'])->name('get.invoice');
     });
 
     // admin dashboard
@@ -53,9 +53,9 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/', [AdminDashboard::class, 'index'])->name('dashboard');
 
         Route::post('checkout/{checkout}', [AdminCheckout::class, 'change'])->name('checkout.change');
+        Route::get('checkout/{checkout:midtrans_booking_code}', [AdminCheckout::class, 'edit'])->name('checkout.edit');
+        Route::put('checkout/{checkout:midtrans_booking_code}', [AdminCheckout::class, 'update'])->name('checkout.update');
         Route::delete('checkout/{checkout}', [AdminCheckout::class, 'destroy'])->name('checkout.delete');
-        Route::get('checkout/{checkout}', [AdminCheckout::class, 'edit'])->name('checkout.edit');
-        Route::put('checkout/{checkout}', [AdminCheckout::class, 'update'])->name('checkout.update');
     });
 });
 

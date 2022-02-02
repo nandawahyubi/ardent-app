@@ -66,7 +66,7 @@
                                     </td>
                                     <td class="text-center d-flex">
                                         {{-- @if (!$checkout->status) --}}
-                                            <a href="{{ route('admin.checkout.edit', $checkout->id) }}" class="btn btn-secondary shadow m-1">
+                                            <a href="{{ route('admin.checkout.edit', $checkout->midtrans_booking_code) }}" class="btn btn-secondary shadow m-1">
                                                 <i class="fas fa-pen-square"></i>
                                             </a>
                                         {{-- @endif --}}

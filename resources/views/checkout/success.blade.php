@@ -11,10 +11,19 @@
                 <p class="story text-center">
                     CONGRATULATIONS!
                 </p>
-                <h2 class="primary-header ">
-                    Success Checkout
-                </h2>
-                <p class="text-center">Silahkah Menuju Halaman Dashboard dan Lakukan Pembayaran</p>
+                @foreach ($checkouts as $checkout)
+                    @if ($checkout->payment_status == 'waiting')
+                        <h2 class="primary-header ">
+                            Checkout Success
+                        </h2>
+                        <p class="text-center">Silahkah Menuju Halaman Dashboard dan Lakukan Pembayaran</p>
+                    @elseif ($checkout->payment_status == 'paid')
+                        <h2 class="primary-header ">
+                            Payment Success
+                        </h2>
+                        <p class="text-center">Silahkah Menuju Halaman Dashboard Untuk Melihat Detail Pesanan</p>
+                    @endif
+                @endforeach
                 <a href="{{ route('dashboard') }}" class="btn btn-warning w-25 mt-2">
                     My Dashboard
                 </a>

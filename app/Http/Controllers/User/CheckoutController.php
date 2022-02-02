@@ -81,7 +81,6 @@ class CheckoutController extends Controller
             // create checkout
             $checkout = Checkout::create($data);
             $this->getSnapRedirect($checkout);
-    
             // send email
             Mail::to(Auth::user()->email)->send(new AfterCheckout($checkout));
             
@@ -137,7 +136,10 @@ class CheckoutController extends Controller
 
     public function success()
     {
-        return view('checkout.success');
+        $checkout = Checkout::with('Package')->whereUserId(Auth::id())->get();
+        return view('checkout.success', [
+            'checkouts' => $checkout
+        ]);
     }
 
     /**
@@ -245,6 +247,10 @@ class CheckoutController extends Controller
         }
 
         $checkout->save();
-        return redirect(route('checkout.success'));
+        
+        $checkout = Checkout::with('Package')->whereUserId(Auth::id())->get();
+        return view('checkout.success', [
+            'checkouts' => $checkout
+        ]);
     }
 }

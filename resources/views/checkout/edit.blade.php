@@ -31,7 +31,7 @@
                     <div class="col-lg-1 col-12"></div>
                     <div class="col-lg-6 col-12">
                         @include('components.alert')
-                        <form action="{{ route('admin.checkout.update', $checkout->id) }}" class="basic-form" method="POST" autocomplete="off">
+                        <form action="{{ route('admin.checkout.update', $checkout->midtrans_booking_code) }}" class="basic-form" method="POST" autocomplete="off">
                             @method('PUT')
                             @csrf
                             <div class="mb-4">

@@ -14,7 +14,7 @@ use Alert;
 
 class CheckoutController extends Controller
 {
-    public function change(Request $request, Checkout $checkout)
+    public function change(Checkout $checkout)
     {
         if ($checkout->status == 0) {
             $checkout->status = 1;
@@ -51,7 +51,7 @@ class CheckoutController extends Controller
         
         if ($checkSchedule == 2) {
             Alert::error('Error', 'Maaf, Jadwal di Tanggal Ini Sudah Penuh!');
-            return redirect()->route('admin.checkout.edit', $checkout->id)->with('error', "Maaf, Jadwal di Tanggal Ini Sudah Penuh!");
+            return redirect()->route('admin.checkout.edit', $checkout->midtrans_booking_code)->with('error', "Maaf, Jadwal di Tanggal Ini Sudah Penuh!");
 
         } elseif ($checkSchedule < 2) {
             $dataUser     = User::where('id', $checkout->user_id)->first();
@@ -70,8 +70,8 @@ class CheckoutController extends Controller
             $dataCheckout->order_schedule   = $data['order_schedule'];
             $dataCheckout->save();
     
-            Alert::success('Success', "Checkout with ID {$checkout->id} has been updated!");
-            return redirect(route('admin.dashboard'))->with('success', "Checkout with ID {$checkout->id} has been updated!");
+            Alert::success('Success', "Checkout with code {$checkout->midtrans_booking_code} has been updated!");
+            return redirect(route('admin.dashboard'))->with('success', "Checkout with code {$checkout->midtrans_booking_code} has been updated!");
         }
     }
 

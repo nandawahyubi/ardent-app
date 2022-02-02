@@ -42,20 +42,20 @@
                         </td>
                         <td class="text-center">
                             @if ($checkout->payment_status == 'waiting' || $checkout->payment_status == 'pending')
-                            <span class="badge rounded-pill bg-warning text-dark">{{ $checkout->payment_status }}</span>
+                                <span class="badge rounded-pill bg-warning text-dark">{{ $checkout->payment_status }}</span>
                             @elseif ($checkout->payment_status == 'paid')
-                            <span class="badge rounded-pill bg-success">{{ $checkout->payment_status }}</span>
+                                <span class="badge rounded-pill bg-success">{{ $checkout->payment_status }}</span>
                             @elseif ($checkout->payment_status == 'failed')
-                            <span class="badge rounded-pill bg-danger">{{ $checkout->payment_status }}</span>
+                                <span class="badge rounded-pill bg-danger">{{ $checkout->payment_status }}</span>
                             @endif
                         </td>
                         <td class="text-center">
                             @if ($checkout->status == 0)
-                            <span class="badge rounded-pill bg-danger">Waiting In Line</span>
+                                <span class="badge rounded-pill bg-danger">waiting in line</span>
                             @elseif ($checkout->status == 1)
-                            <span class="badge rounded-pill bg-warning text-dark">On Progress</span>
+                                <span class="badge rounded-pill bg-warning text-dark">on progress</span>
                             @elseif ($checkout->status == 2)
-                            <span class="badge rounded-pill bg-success">Finished</span>
+                                <span class="badge rounded-pill bg-success">finished</span>
                             @endif
                         </td>
                         <td class="text-center">
@@ -70,9 +70,9 @@
                         </td>
                         <td class="text-center">
                             @if ($checkout->payment_status == 'paid')
-                            <a href="{{ route('user.get.invoice', $checkout->midtrans_booking_code) }}" class="btn btn-secondary" style="width: 105px" target="_blank">
-                                Invoice
-                            </a>
+                                <a href="{{ route('user.get.invoice', $checkout->midtrans_booking_code) }}" class="btn btn-secondary" style="width: 105px" target="_blank">
+                                    Invoice <i class="fas fa-print"></i>
+                                </a>
                             @endif
                         </td>
                     </tr>

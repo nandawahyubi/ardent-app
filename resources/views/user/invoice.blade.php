@@ -53,8 +53,8 @@
                         </p>
                     </div>
                     <div class="col-5 p-0 text-end">
-                        <p class="mb-0">Issued: 01-01-2022</p>
-                        <p>Status: <strong>SUCCESS</strong></p>
+                        <p class="mb-0">Issued: {{ $checkout->updated_at->format('d-m-Y H:i') }}</p>
+                        <p>Status: <span class="badge rounded-pill bg-success"><strong>SUCCESS</strong></span></p>
                     </div>
                 </div>
                 <div class="row m-0 py-3">
