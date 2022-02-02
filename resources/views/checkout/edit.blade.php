@@ -30,6 +30,7 @@
                     </div>
                     <div class="col-lg-1 col-12"></div>
                     <div class="col-lg-6 col-12">
+                        @include('components.alert')
                         <form action="{{ route('admin.checkout.update', $checkout->id) }}" class="basic-form" method="POST" autocomplete="off">
                             @method('PUT')
                             @csrf
@@ -119,7 +120,7 @@
                                         <label for="order_schedule" class="form-label">Order Schedule</label>
                                         <input type="text"
                                             class="form-control {{ $errors->has('order_schedule') ? 'is-invalid' : '' }}"
-                                            id="order_schedule" name="order_schedule" value="{{ $checkout->order_schedule }}" required>
+                                            id="order_schedule" name="order_schedule" value="{{ $checkout->order_schedule }}" {{ $checkout->status != 0 ? 'readonly' : '' }} required>
                                         @if ($errors->has('order_schedule'))
                                         <p class="text-danger">{{ $errors->first('order_schedule') }}</p>
                                         @endif

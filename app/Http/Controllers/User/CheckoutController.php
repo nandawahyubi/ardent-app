@@ -10,18 +10,19 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\User\Checkout\Store;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\Checkout\AfterCheckout;
-use Exception;
+// use Exception;
 use Illuminate\Support\Str;
 use Midtrans;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class CheckoutController extends Controller
 {
     public function __construct()
     {
-        Midtrans\Config::$serverKey     = env('MIDTRANS_SERVERKEY');
-        Midtrans\Config::$isProduction  = env('MIDTRANS_IS_PRODUCTION');
-        Midtrans\Config::$isSanitized   = env('MIDTRANS_IS_SANITIZED');
-        Midtrans\Config::$is3ds         = env('MIDTRANS_IS_3DS');
+        Midtrans\Config::$serverKey     = "SB-Mid-server-3ubyn7loJ531nEA_3OdVzFhQ";
+        Midtrans\Config::$isProduction  = false;
+        Midtrans\Config::$isSanitized   = false;
+        Midtrans\Config::$is3ds         = false;
     }
 
     /**
@@ -56,28 +57,37 @@ class CheckoutController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Store $request, Package $package)
+    public function store(Store $request, Package $package, Checkout $checkout)
     {
-        $data = $request->all();
-        $data['user_id'] = Auth::id();
-        $data['package_id'] = $package->id;
+        $data     = $request->all();
+        $schedule = Checkout::where('order_schedule', $data['order_schedule'])->count();
 
-        // update user data
-        $user = Auth::user();
-        $user->name    = $data['name'];
-        $user->email   = $data['email'];
-        $user->no_telp = $data['no_telp'];
-        $user->address = $data['address'];
-        $user->save();
+        if ($schedule == 2) {
+            Alert::error('Error', 'Maaf, Jadwal di Tanggal Ini Sudah Penuh!');
+            return back()->withInput()->with('error', "Maaf, Jadwal di Tanggal Ini Sudah Penuh!");
 
-        // create checkout
-        $checkout = Checkout::create($data);
-        $this->getSnapRedirect($checkout);
-
-        // send email
-        Mail::to(Auth::user()->email)->send(new AfterCheckout($checkout));
-
-        return redirect(route('checkout.success'));
+        } elseif ($schedule < 2) {
+            $data['user_id'] = Auth::id();
+            $data['package_id'] = $package->id;
+    
+            // update user data
+            $user = Auth::user();
+            $user->name    = $data['name'];
+            $user->email   = $data['email'];
+            $user->no_telp = $data['no_telp'];
+            $user->address = $data['address'];
+            $user->save();
+    
+            // create checkout
+            $checkout = Checkout::create($data);
+            $this->getSnapRedirect($checkout);
+    
+            // send email
+            Mail::to(Auth::user()->email)->send(new AfterCheckout($checkout));
+            
+            Alert::success('Success', 'Selamat, Pesanan Anda Berhasil di Lakukan');
+            return redirect(route('checkout.success'));
+        }
     }
 
     /**

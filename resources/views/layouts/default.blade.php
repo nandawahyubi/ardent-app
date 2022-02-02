@@ -20,6 +20,8 @@
 <body>
     @include('components.navbar')
 
+    @include('sweetalert::alert')
+
     @yield('content')
 
     <script src="{{ asset('js/jquery.js') }}"></script>

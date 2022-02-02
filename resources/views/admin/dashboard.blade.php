@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col">
                 <div class="card shadow">
-                    <div class="card-header">
+                    <div class="card-header py-3">
                         <strong>Booking List</strong>
                     </div>
                     <div class="card-body table-responsive">
@@ -65,11 +65,11 @@
                                         @endif
                                     </td>
                                     <td class="text-center d-flex">
-                                        @if (!$checkout->status)
+                                        {{-- @if (!$checkout->status) --}}
                                             <a href="{{ route('admin.checkout.edit', $checkout->id) }}" class="btn btn-secondary shadow m-1">
                                                 <i class="fas fa-pen-square"></i>
                                             </a>
-                                        @endif
+                                        {{-- @endif --}}
                                         <form id="deleteCheckout{{ $checkout->id }}" action="{{ route('admin.checkout.delete', $checkout->id) }}" method="post">
                                             @method('delete')
                                             @csrf

@@ -30,6 +30,7 @@
                     </div>
                     <div class="col-lg-1 col-12"></div>
                     <div class="col-lg-6 col-12">
+                        @include('components.alert')
                         <form action="{{ route('checkout.store', $package->id) }}" class="basic-form" method="POST" autocomplete="off">
                             @csrf
                             <div class="mb-4">
