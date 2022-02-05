@@ -49,6 +49,11 @@
                                 <span class="badge rounded-pill bg-danger">{{ $checkout->payment_status }}</span>
                             @endif
                         </td>
+                        @if ($checkout->payment_status == 'failed')
+                        <td class="text-center">
+                            <span class="badge rounded-pill bg-danger">{{ $checkout->payment_status }}</span>
+                        </td>    
+                        @else                            
                         <td class="text-center">
                             @if ($checkout->status == 0)
                                 <span class="badge rounded-pill bg-danger">waiting in line</span>
@@ -58,13 +63,14 @@
                                 <span class="badge rounded-pill bg-success">finished</span>
                             @endif
                         </td>
+                        @endif
                         <td class="text-center">
                             @if ($checkout->payment_status == 'waiting')
                                 <a href="{{ $checkout->midtrans_url }}" class="btn btn-warning" style="width: 105px">Pay Here</a>
                             @endif
                         </td>
                         <td class="text-center">
-                            <a href="https://wa.me/082272417131?text=Hi, saya ingin bertanya tentang paket {{ $checkout->Package->title }}" class="btn px-0">
+                            <a href="https://wa.me/082272417131?text=Hi, saya ingin bertanya tentang paket {{ $checkout->Package->title }}">
                                 <i class="fas fa-headset fa-2x text-primary"></i>
                             </a>
                         </td>
@@ -73,12 +79,20 @@
                                 <a href="{{ route('user.get.invoice', $checkout->midtrans_booking_code) }}" class="btn btn-secondary" style="width: 105px" target="_blank">
                                     Invoice <i class="fas fa-print"></i>
                                 </a>
+                            @elseif ($checkout->payment_status == 'waiting')
+                                <form id="cancelOrder{{ $checkout->id }}" action="{{ route('checkout.delete', $checkout->id) }}" method="post">
+                                    @method('delete')
+                                    @csrf
+                                </form>
+                                <button class="btn btn-danger shadow m-1" onclick="cancelOrder({{ $checkout->id }})">
+                                    Cancel
+                                </button>
                             @endif
                         </td>
                     </tr>
                     @empty
                     <tr>
-                        <td colspan="6" class="text-center py-5 text-decoration-line-through"><b>No Order List</b></td>
+                        <td colspan="7" class="text-center py-5 text-decoration-line-through"><b>No Order List</b></td>
                     </tr>
                     @endforelse
                 </tbody>

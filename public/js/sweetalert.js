@@ -48,3 +48,20 @@ function deleteCheckout(id){
         }
     });
 }
+
+function cancelOrder(id){
+    Swal.fire({
+        title: "Want To Cancel",
+        text : "Order Data Will Be Canceled and Deleted",
+        icon: "question",
+        showCancelButton: true,
+        confirmButtonColor: "#d33",
+        confirmButtonText: "Yes",
+        cancelButtonColor: "#3085d6",
+        cancelButtonText: "Cancel",
+    }).then((result) => {
+        if (result.isConfirmed) {
+            $('#cancelOrder'+id).submit();
+        }
+    });
+}

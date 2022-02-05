@@ -131,7 +131,10 @@ class CheckoutController extends Controller
      */
     public function destroy(Checkout $checkout)
     {
-        //
+        Checkout::destroy($checkout->id);
+
+        Alert::success('Success', "This Order Has Been Successfully Canceled");
+        return back()->with('success', "This Order Has Been Successfully Canceled");
     }
 
     public function success()
