@@ -25,7 +25,14 @@
                             <tbody>
                                 @forelse ($checkouts as $checkout)
                                 <tr class="align-middle">
-                                    <td>{{ $checkout->User->name }}</td>
+                                    <td>
+                                        <p class="mb-1">
+                                            {{ $checkout->User->name }}
+                                        </p>
+                                        <p>
+                                            {{ $checkout->midtrans_booking_code }}
+                                        </p>
+                                    </td>
                                     <td>{{ $checkout->Package->title }}</td>
                                     <td class="text-center">{{ date('d M Y', strtotime($checkout->order_schedule)) }}</td>
                                     <td class="text-center">
@@ -64,12 +71,12 @@
                                             @endif
                                         @endif
                                     </td>
-                                    <td class="text-center d-flex">
-                                        {{-- @if (!$checkout->status) --}}
-                                            <a href="{{ route('admin.checkout.edit', $checkout->midtrans_booking_code) }}" class="btn btn-secondary shadow m-1">
-                                                <i class="fas fa-pen-square"></i>
-                                            </a>
-                                        {{-- @endif --}}
+                                    <td class="text-center p-0">
+                                        <a href="{{ route('admin.checkout.edit', $checkout->midtrans_booking_code) }}" class="btn btn-secondary shadow m-1">
+                                            <i class="fas fa-pen-square"></i>
+                                        </a>
+                                    </td>
+                                    <td class="text-center p-0">
                                         <form id="deleteCheckout{{ $checkout->id }}" action="{{ route('admin.checkout.delete', $checkout->id) }}" method="post">
                                             @method('delete')
                                             @csrf

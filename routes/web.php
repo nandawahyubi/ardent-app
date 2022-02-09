@@ -37,6 +37,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('checkout/success', [CheckoutController::class, 'success'])->name('checkout.success')->middleware('ensureUserRole:user');
     Route::get('checkout/{package:slug}', [CheckoutController::class, 'create'])->name('checkout.create')->middleware('ensureUserRole:user');
     Route::post('checkout/{package}', [CheckoutController::class, 'store'])->name('checkout.store')->middleware('ensureUserRole:user');
+    Route::get('checkout/update/{checkout:midtrans_booking_code}', [CheckoutController::class, 'edit'])->name('checkout.edit');
+    Route::put('checkout/{checkout:midtrans_booking_code}', [CheckoutController::class, 'update'])->name('checkout.update');
     Route::delete('checkout/{checkout}', [CheckoutController::class, 'destroy'])->name('checkout.delete')->middleware('ensureUserRole:user');
     
     // dashboard

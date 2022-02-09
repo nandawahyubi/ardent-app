@@ -31,7 +31,7 @@
                     <div class="col-lg-1 col-12"></div>
                     <div class="col-lg-6 col-12">
                         @include('components.alert')
-                        <form action="{{ route('checkout.update', $checkout->midtrans_booking_code) }}" class="basic-form" method="POST" autocomplete="off">
+                        <form action="{{ route('admin.checkout.update', $checkout->midtrans_booking_code) }}" class="basic-form" method="POST" autocomplete="off">
                             @method('PUT')
                             @csrf
                             <div class="mb-4">
@@ -130,7 +130,7 @@
                             <div class="row">
                                 <div class="col d-flex justify-content-around align-items-center">
                                     <button type="submit" class="btn btn-warning">Update</button>
-                                    <a href="{{ route('user.dashboard') }}" class="btn btn-secondary">Back</a>
+                                    <a href="{{ route('admin.dashboard') }}" class="btn btn-secondary">Back</a>
                                 </div>
                             </div>
                         </form>

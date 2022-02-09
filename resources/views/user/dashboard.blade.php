@@ -80,12 +80,15 @@
                                     Invoice <i class="fas fa-print"></i>
                                 </a>
                             @elseif ($checkout->payment_status == 'waiting')
-                                <form id="cancelOrder{{ $checkout->id }}" action="{{ route('checkout.delete', $checkout->id) }}" method="post">
+                                <a href="{{ route('checkout.edit', $checkout->midtrans_booking_code) }}" class="btn btn-secondary shadow m-1">
+                                    <i class="fas fa-pen-square"></i>
+                                </a>
+                                <form id="cancelOrder{{ $checkout->id }}" class="d-inline" action="{{ route('checkout.delete', $checkout->id) }}" method="post">
                                     @method('delete')
                                     @csrf
                                 </form>
                                 <button class="btn btn-danger shadow m-1" onclick="cancelOrder({{ $checkout->id }})">
-                                    Cancel
+                                    <i class="fas fa-trash"></i>
                                 </button>
                             @endif
                         </td>

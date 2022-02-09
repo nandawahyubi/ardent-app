@@ -84,7 +84,7 @@ class CheckoutController extends Controller
             // send email
             Mail::to(Auth::user()->email)->send(new AfterCheckout($checkout));
             
-            Alert::success('Success', 'Selamat, Pesanan Anda Berhasil di Lakukan');
+            Alert::success('Success', "Congratulations, Your Order Has Been Successfully Done");
             return redirect(route('checkout.success'));
         }
     }
@@ -108,7 +108,9 @@ class CheckoutController extends Controller
      */
     public function edit(Checkout $checkout)
     {
-        //
+        return view('checkout.edit', [
+            'checkout' => $checkout
+        ]);
     }
 
     /**
@@ -118,9 +120,37 @@ class CheckoutController extends Controller
      * @param  \App\Models\Checkout  $checkout
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Checkout $checkout)
+    public function update(Store $request, Checkout $checkout)
     {
-        //
+        $data          = $request->all();
+        $checkSchedule = Checkout::where('order_schedule', $data['order_schedule'])->count();
+        
+        if ($checkSchedule == 2) {
+            Alert::error('Error', "Sorry, The Schedule For This Date Is Already Full!");
+            return redirect()->route('checkout.edit', $checkout->midtrans_booking_code)->with('error', "Sorry, The Schedule For This Date Is Already Full!");
+
+        } elseif ($checkSchedule < 2) {
+            $check = Checkout::find($checkout->midtrans_booking_code);
+
+            // update checkout data
+            $check->vehicle_brand    = $data['vehicle_brand'];
+            $check->vehicle_color    = $data['vehicle_color'];
+            $check->production_year  = $data['production_year'];
+            $check->number_plate     = $data['number_plate'];
+            $check->order_schedule   = $data['order_schedule'];
+            $check->save();
+    
+            // update user data
+            $user = Auth::user();
+            $user->name    = $data['name'];
+            $user->email   = $data['email'];
+            $user->no_telp = $data['no_telp'];
+            $user->address = $data['address'];
+            $user->save();
+    
+            Alert::success('Success', "Your Order Data Has Been Successfully Changed");
+            return redirect(route('user.dashboard'))->with('success', "Your Order Data Has Been Successfully Changed");
+        }
     }
 
     /**

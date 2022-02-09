@@ -39,7 +39,7 @@ class CheckoutController extends Controller
 
     public function edit(Checkout $checkout)
     {
-        return view('checkout.edit', [
+        return view('admin.edit', [
             'checkout' => $checkout
         ]);
     }
