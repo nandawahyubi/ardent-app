@@ -28,24 +28,40 @@
                 </div>
             </div>
         </div>
-        {{-- <div class="row brands">
-            <div class="col-lg-12 d-xs-none d-sm-none d-md-none d-lg-block text-center">
-                <img src="{{asset('img/brands.png')}}" alt="">
+    </div>
+</section>
+
+<section id="sponsor">
+    <div class="container d-none d-md-block d-lg-block d-xl-block pb-5">
+        <div class="row justify-content-between align-items-center">
+            <div class="col-2">
+                <img src="{{ asset('img/sponsor/3m-autofilm.png') }}" alt="" class="w-100">
             </div>
-        </div> --}}
+            <div class="col-2">
+                <img src="{{ asset('img/sponsor/iceberg-window-films.jpg') }}" alt="" class="w-100">
+            </div>
+            <div class="col-2">
+                <img src="{{ asset('img/sponsor/solar-gard-premium.jpg') }}" alt="" class="w-100">
+            </div>
+            <div class="col-2">
+                <img src="{{ asset('img/sponsor/orpro-window-film.png') }}" alt="" class="w-100">
+            </div>
+            <div class="col-2">
+                <img src="{{ asset('img/sponsor/vgard.png') }}" alt="" class="w-100">
+            </div>
+        </div>
     </div>
 </section>
 
 <section id="about" class="about">
-    <div class="container">
-        <h1>ardent auto detailing</h1>
+    <div class="container pt-3">
+        <h1 class="mb-4">ardent auto detailing</h1>
     </div>
     <div class="parent">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6 col-12">
-                    <h2>Tentang Kami</h2>
-                    <p style="text-indent: 30px">Ardent Auto Detailing adalah workshop otomotif di kota Medan yang
+                    <p>Ardent Auto Detailing adalah workshop otomotif di kota Medan yang
                         khusus melakukan makeover
                         dan salon mobil melalui teknologi Nano Ceramic dan turunannya.</p>
                     <span class="about pt-2 pb-1">Adapun jasa - jasa yang kami tawarkan yakni :</span>
@@ -80,7 +96,7 @@
                     </ul>
                 </div>
                 <div class="col-lg-6 d-none d-sm-none d-md-none d-lg-block">
-                    <img src="{{ asset('img/about.png') }}" alt="" style="width: 100%">
+                    <img src="{{ asset('img/about.png') }}" alt="" class="w-100">
                 </div>
             </div>
         </div>
@@ -146,7 +162,7 @@
         </div>
         <div class="row p-3">
             <div class="col-sm-12 col-md-4 col-lg-4">
-                <img src="{{ asset('img/dayone-1.jpg') }}" alt="">
+                <img src="{{ asset('img/dayone-1.jpg') }}" alt="" class="rounded-3 shadow">
             </div>
             <div class="col-sm-12 col-md-4 col-lg-4 align-self-center text-center">
                 <ul class="pt-3 pb-2">
@@ -163,7 +179,7 @@
                 </ul>
             </div>
             <div class="col-sm-12 col-md-4 col-lg-4">
-                <img src="{{ asset('img/dayone-2.jpg') }}" alt="">
+                <img src="{{ asset('img/dayone-2.jpg') }}" alt="" class="rounded-3 shadow">
             </div>
         </div>
         <div class="row text-center">
@@ -171,7 +187,7 @@
         </div>
         <div class="row p-3">
             <div class="col-md-4">
-                <img src="{{ asset('img/daytwo-1.jpg') }}" alt="">
+                <img src="{{ asset('img/daytwo-1.jpg') }}" alt="" class="rounded-3 shadow">
             </div>
             <div class="col-md-4 align-self-center text-center">
                 <ul class="pt-3 pb-2">
@@ -184,7 +200,7 @@
                 </ul>
             </div>
             <div class="col-md-4">
-                <img src="{{ asset('img/daytwo-2.jpeg') }}" alt="">
+                <img src="{{ asset('img/daytwo-2.jpeg') }}" alt="" class="rounded-3 shadow">
             </div>
         </div>
         <div class="row text-center">
@@ -192,12 +208,12 @@
         </div>
         <div class="row p-3">
             <div class="col-md-4">
-                <img src="{{ asset('img/daythree-1.jpg') }}" alt="">
+                <img src="{{ asset('img/daythree-1.jpg') }}" alt="" class="rounded-3 shadow">
             </div>
             <div class="col-md-4 align-self-center text-center">
                 <ul class="pt-3 pb-2">
                     <li>
-                        <i class="far fa-check-circle"></i> Application of Nano Ceramic Coating triple layers
+                        <i class="far fa-check-circle"></i> Application of Nano Ceramic Coating <br> triple layers
                     </li>
                     <li>
                         <i class="far fa-check-circle"></i> Buffing
@@ -211,25 +227,29 @@
                 </ul>
             </div>
             <div class="col-md-4">
-                <img src="{{ asset('img/daythree-2.jpeg') }}" alt="">
+                <img src="{{ asset('img/daythree-2.jpeg') }}" alt="" class="rounded-3 shadow">
             </div>
         </div>
         <div class="row text-center">
-            <h2>Day 4</h2>
+            <h2 class="mb-0">Day 4</h2>
         </div>
-        <div class="row p-3">
-            <div class="col-md-4 offset-md-4 align-self-center text-center">
+        <div class="row pb-3 px-3 d-flex justify-content-center flex-column">
+            <div class="col-md-4 align-self-center text-center">
                 <ul class="pt-3 pb-2">
-                    <li><i class="far fa-check-circle"></i> Delivery to customer
+                    <li>
+                        <i class="far fa-check-circle"></i> Delivery to customer
                     </li>
                 </ul>
+            </div>
+            <div class="col-md-4 align-self-center">
+                <img src="{{ asset('img/delivery-to-customer.jpg') }}" alt="" class="w-100 rounded-3 shadow">
             </div>
         </div>
     </div>
 </section>
 
 <section id="portfolio" class="portfolio">
-    <div class="container-fluid">
+    <div class="container-fluid mt-5 px-4">
         <div class="container">
             <div class="row mr-0 ml-0 text-center pb-4">
                 <div class="col-md">
@@ -415,7 +435,7 @@
                 </div>
             </div>
             <div class="row m-4 justify-content-center">
-                <div class="col-md-6 col-lg mt-2">
+                <div class="col-md-6 col-lg mb-5">
                     <div class="card-service card">
                         <div class="card-body">
                             <p class="fw-bold text-center">Paket Signature Nano Ceramic Coating by Crystal Shield</p>
@@ -463,7 +483,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg mt-2">
+                <div class="col-md-6 col-lg mb-5">
                     <div class="card-service card">
                         <div class="card-body">
                             <p class="fw-bold text-center">Paket Signature Nano Crystal Based Coating by Crystal
@@ -513,7 +533,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg mt-2">
+                <div class="col-md-6 col-lg mb-5">
                     <div class="card-service card bg-warning">
                         <div class="card-body">
                             <p class="fw-bold text-center">Paket Signature Diamond Coating by Crystal Shield</p>
@@ -563,9 +583,9 @@
                     </div>
                 </div>
             </div>
-            <div class="row mt-4 ml-1 mr-1 justify-content-center">
-                <div class="col-8">
-                    <div class="alert alert-light bg-light" role="alert">
+            <div class="row mt-4 justify-content-center mb-5">
+                <div class="col-sm col-md col-lg-8 col-xl-8 px-5">
+                    <div class="alert alert-light bg-light mb-0 shadow" role="alert">
                         <h4 class="alert-heading text-center note" style="color: black;">Keterangan :</h4>
                         <table class="table table-borderless text-center" style="color: black;">
                             <thead>
@@ -638,7 +658,7 @@
             </div>
         </div>
         <div class="row align-items-center">
-            <div class="col-md-7">
+            <div class="col-md-7 px-5">
                 <button class="accordion">Apa poin penting keunggulan coating ?</button>
                 <div class="panel">
                     <p>- Cat mobil menjadi kilat untuk jangka waktu yang lama <br>
@@ -659,7 +679,7 @@
                 </div>
             </div>
             <div class="col-md-5 d-none d-md-block d-lg-block">
-                <img src="{{ asset('img/questions.png') }}" alt="" style="width: 100%;">
+                <img src="{{ asset('img/questions.png') }}" alt="" class="w-100">
             </div>
         </div>
     </div>
@@ -670,7 +690,8 @@
         <div class="embed-responsive embed-responsive-21by9">
             <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d512.3092719250042!2d98.70617115222647!3d3.633402304066747!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zM8KwMzgnMDAuNCJOIDk4wrA0MicyMi43IkU!5e0!3m2!1sid!2sid!4v1627363217834!5m2!1sid!2sid"
-                class="w-100" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                class="w-100" height="450" style="border:0;" allowfullscreen="" loading="lazy">
+            </iframe>
         </div>
     </div>
 </section>
@@ -678,34 +699,27 @@
 <section class="footer">
     <div class="container-fluid">
         <div class="footer-parent p-4">
-            <div class="row justify-content-between">
-                <div class="col-md">
+            <div class="row">
+                <div class="col">
+                    <a href="{{ route('welcome') }}">
+                        <img src="{{ asset('img/logo-navbar.png') }}" width="220" height="60" alt="logo">
+                    </a>
+                </div>
+            </div>
+            <div class="row justify-content-between align-items-center">
+                <div class="col-6">
                     <div class="footer-child">
-                        <a href="{{ route('welcome') }}">
-                            <img src="{{ asset('img/logo-navbar.png') }}" width="220" height="60" alt="logo">
-                        </a>
-                        <div>
-                            <span class="text-light">Salon mobil terkenal yang ada di daerah medan. <br>
-                                Lebih tepatnya di Komplek Cemara Asri <br>
-                                Jl. Boulevard Timur No. 88G
-                            </span>
-                        </div>
+                        <p class="text-light">Salon mobil terkenal yang ada di daerah medan. <br>
+                            Lebih tepatnya di Komplek Cemara Asri <br>
+                            Jl. Boulevard Timur No. 88G
+                        </p>
                     </div>
                 </div>
-                <div class="col-md">
-                    <div class="footer-child" style="text-align: right;">
-                        <div>
-                            <span class="text-light">Customer Service</span>
-                        </div>
-                        <div>
-                            <span class="text-success">Telp : 0811 6150 309</span>
-                        </div>
-                        <div>
-                            <span class="text-success">Whatsapp : 0811 6150 309 </span>
-                        </div>
-                        <div>
-                            <span class="text-success">ardentautodetailingaad@gmail.com</span>
-                        </div>
+                <div class="col-6">
+                    <div class="footer-child text-end d-flex flex-column">                        
+                        <span class="text-light">Customer Service</span>                                                
+                        <span class="text-success">Telp : 0811 6150 309</span>                                                
+                        <span class="text-success">Whatsapp : 0811 6150 309 </span>                      
                         <ul>
                             <li>
                                 <a href="#">
@@ -722,9 +736,17 @@
                                     <i class="fab fa-youtube-square fa-2x"></i>
                                 </a>
                             </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa-solid fa-square-envelope fa-2x"></i>
+                                </a>
+                            </li>
                         </ul>
-                    </div>
+                    </d>
                 </div>
+            </div>
+            <div class="row">
+                <p class="text-white text-center my-2">Copyright © {{ date('Y') }} | Nanda Wahyubi</p> 
             </div>
         </div>
     </div>

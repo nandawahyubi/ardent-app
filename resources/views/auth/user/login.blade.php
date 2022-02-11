@@ -2,12 +2,11 @@
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/main.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
+    <link rel="shortcut icon" href="{{ asset('img/logo-navbar.png') }}" />
 
     <title>Login | Ardent Auto Detailing</title>
 </head>
@@ -21,16 +20,17 @@
                     <img src="{{ asset('img/banner-login.png') }}" alt="">
                 </div>
                 <div class="right col">
-                    <div class="one">
-                        <h2 class="title pb-4">Ardent Auto Detailing</h3>
-                            <h1 class="header">Start Today</h1>
-                            <h6 class="subheader">Because tomorrow become never</h6>
+                    <div class="content w-75 mb-5">
+                        <h2 class="title pb-4 mb-2">Ardent Auto Detailing</h3>
+                        <h1 class="header">Start Today</h1>
+                        <h6 class="subheader pb-2 mb-1">Because tomorrow become never</h6>
                     </div>
-                    <a class="btn btn-light" href="{{ route('user.login.google') }}">
-                        <img src="{{ asset('img/ic_google.svg') }}" class="icon" alt=""> Sign In with Google
+                    <a href="{{ route('user.login.google') }}" class="btn btn-light btn-google shadow w-75 d-flex justify-content-center">
+                        <img src="{{ asset('img/ic_google.svg') }}" alt="icon-google" class="icon">
+                        <p class="mx-3 mb-0 text-center">Sign In with Google</p>
                     </a>
                     <div class="licensi">
-                        Created By Nanda
+                        Copyright © {{ date('Y') }}
                     </div>
                 </div>
             </div>

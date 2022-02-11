@@ -329,7 +329,7 @@ p {
 }
 
 .login-user .left img {
-    width: 50%;
+    max-width: 55%;
 }
 
 .login-user .right {
@@ -352,12 +352,13 @@ p {
     font-size: 25px;
 }
 
-.login-user .right .btn {
+.login-user .right .btn-google {
     border-radius: 30px;
     padding: 15px 60px;
-    margin: 80px auto;
     background-color: whitesmoke;
     font-size: 22px;
+    border: none;
+    transition-duration: 0.5s;
 }
 
 .login-user .right .btn:hover {
@@ -365,11 +366,15 @@ p {
     color: white;
 }
 
-/* .login-user .right .licensi {
+.login-user .right img.icon {
+    min-width: 30px;
+}
+
+.login-user .right .licensi {
     position: absolute;
-    right: 5px;
     bottom: 5px;
-} */
+    margin: auto;
+}
 
 /* `sm` applies to x-small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
@@ -409,6 +414,10 @@ p {
         background-position: center;
         background-size: cover;
         color: white;
+    }
+
+    .login-user .right .content {
+        text-align: center;
     }
 }
 
