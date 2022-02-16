@@ -297,8 +297,14 @@ p {
     background-color: #262c3b;
 }
 
+.footer img {
+    width: 220px;
+    height: 60px;
+}
+
 .footer ul {
     list-style-type: none;
+    padding-left: 0;
 }
 
 .footer ul li {

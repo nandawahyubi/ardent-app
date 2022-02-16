@@ -736,26 +736,28 @@
             <div class="footer-parent p-4">
                 <div class="row">
                     <div class="col">
-                        <a href="{{ route('welcome') }}">
-                            <img src="{{ asset('img/logo-navbar.png') }}" width="220" height="60" alt="logo">
+                        <a class="logo-footer" href="{{ route('welcome') }}">
+                            <img src="{{ asset('img/logo-navbar.png') }}" alt="logo">
                         </a>
                     </div>
                 </div>
                 <div class="row justify-content-between align-items-center">
                     <div class="col-6">
                         <div class="footer-child">
-                            <p class="text-light">
-                                Salon mobil terkenal yang ada di daerah medan. <br>
-                                Lebih tepatnya di Komplek Cemara Asri <br>
-                                Jl. Boulevard Timur No. 88G
-                            </p>
+                            <p class="text-light mb-0">Ardent Auto Detailing adalah workshop otomotif</p>
+                            <p class="text-light mb-0">dikota medan yang berlokasikan di komplek</p>
+                            <p class="text-light mb-0">Cemara Asri Jl. Boulevard Timur No. 88G</p>
                         </div>
                     </div>
                     <div class="col-6">
                         <div class="footer-child text-end d-flex flex-column">
                             <span class="text-light">Customer Service</span>
-                            <span class="text-success">Telp : 0811 6150 309</span>
-                            <span class="text-success">Whatsapp : 0811 6150 309 </span>
+                            <span class="text-success">
+                                <i class="fa-solid fa-phone"></i> 0811 6150 309
+                            </span>
+                            <span class="text-success">
+                                <i class="fa-brands fa-whatsapp"></i> 0811 6150 309
+                            </span>
                             <ul>
                                 <li>
                                     <a href="#">
