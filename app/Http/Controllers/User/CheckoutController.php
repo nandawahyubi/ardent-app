@@ -2,18 +2,17 @@
 
 namespace App\Http\Controllers\User;
 
-use App\Http\Controllers\Controller;
-use App\Models\Checkout;
-use Illuminate\Http\Request;
-use App\Models\Package;
-use Illuminate\Support\Facades\Auth;
-use App\Http\Requests\User\Checkout\Store;
-use Illuminate\Support\Facades\Mail;
-use App\Mail\Checkout\AfterCheckout;
-// use Exception;
-use Illuminate\Support\Str;
 use Midtrans;
+use App\Models\Package;
+use App\Models\Checkout;
+use Illuminate\Support\Str;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Mail\Checkout\AfterCheckout;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use RealRashid\SweetAlert\Facades\Alert;
+use App\Http\Requests\User\Checkout\Store;
 
 class CheckoutController extends Controller
 {
@@ -169,7 +168,7 @@ class CheckoutController extends Controller
 
     public function success()
     {
-        $checkout = Checkout::with('Package')->whereUserId(Auth::id())->get();
+        $checkout = Checkout::with('Package')->whereUserId(Auth::id())->latest()->take(1)->get();
         return view('checkout.success', [
             'checkouts' => $checkout
         ]);
@@ -188,7 +187,7 @@ class CheckoutController extends Controller
             'gross_amount'  => $price
         ];
 
-        $item_details = [
+        $item_details[] = [
             'id'        => $orderId,
             'price'     => $price,
             'quantity'  => '1',
@@ -217,7 +216,7 @@ class CheckoutController extends Controller
         $midtrans_params = [
             'transaction_details'   => $transaction_details,
             'customer_details'      => $customer_details,
-            'items_details'         => $item_details
+            'item_details'         => $item_details
         ];
 
         try {
@@ -281,9 +280,36 @@ class CheckoutController extends Controller
 
         $checkout->save();
         
-        $checkout = Checkout::with('Package')->whereUserId(Auth::id())->get();
+        Alert::success('Success', "Congratulations, Your Payment Has Been Successfully Completed");
+        $checkout = Checkout::with('Package')->whereUserId(Auth::id())->latest()->take(1)->get();
         return view('checkout.success', [
             'checkouts' => $checkout
         ]);
+    }
+
+    public function file(Request $request, Checkout $checkout)
+    {
+        $request->validate(
+            [
+                'file' => 'required|image|mimes:png,jpg,jpeg|max:2048'
+            ],
+            [
+                'max' => 'The file maximum size 2MB'
+            ]
+        );
+        
+        // if($validated){
+        //     Alert::error('Error', "Sorry, The File You Uploaded Is Still Not Correct");
+        //     return redirect(route('user.dashboard'))->with('error', "Maaf, File Yang Anda Unggah Masih Belom Tepat!");
+        // }
+
+        $fileName      = $checkout->id . '-' . date('His', time()) . '.' . $request->file->extension();
+
+        $check       = Checkout::find($checkout->midtrans_booking_code);
+        $check->file = $request->file('file')->storeAs('proof-of-payment', $fileName);
+        $check->save();
+
+        Alert::success('Success', "Proof Of Payment Has Been Uploaded successfully");
+        return redirect(route('user.dashboard'));
     }
 }

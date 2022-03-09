@@ -11,17 +11,16 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        $checkouts = Checkout::with('Package')->whereUserId(Auth::id())->get();
+        $checkouts = Checkout::with('Package')->whereUserId(Auth::id())->latest()->get();
         return view('user.dashboard', [
             'checkouts' => $checkouts
         ]);
     }
 
-    public function invoice()
+    public function invoice(Checkout $checkout)
     {
-        $checkouts = Checkout::with('Package')->whereUserId(Auth::id())->get();
         return view('user.invoice', [
-            'checkouts' => $checkouts
+            'checkout' => $checkout
         ]);
     }
 }

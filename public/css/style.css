@@ -184,19 +184,10 @@ p {
 }
 
 /* ! pruduct */
-/* .product p.konten-1 {
-    font-family: "Poppins-Medium";
-}
-
-.product .card-body p.konten-1 {
-    font-family: "Poppins-Light";
-} */
-
 .product img {
     width: 300px;
     display: block;
     margin: 0 auto;
-    border-radius: 10px;
 }
 
 /* ! service */
@@ -232,7 +223,7 @@ p {
 }
 
 /* ! question */
-.questions .accordion {
+.questions .accordion-btn {
     background-color: #eee;
     color: #444;
     cursor: pointer;
@@ -247,11 +238,11 @@ p {
 }
 
 .questions .active,
-.accordion:hover {
+.accordion-btn:hover {
     background-color: orange;
 }
 
-.questions .accordion:after {
+.questions .accordion-btn:after {
     content: "\002B";
     color: #777;
     font-weight: bold;
@@ -298,8 +289,7 @@ p {
 }
 
 .footer img {
-    width: 220px;
-    height: 60px;
+    max-width: 165px;
 }
 
 .footer ul {
@@ -347,7 +337,7 @@ p {
 }
 
 .login-user .right h2.title {
-    font-size: 50px;
+    font-size: 47px;
 }
 
 .login-user .right h1.header {
@@ -359,17 +349,20 @@ p {
 }
 
 .login-user .right .btn-google {
-    border-radius: 30px;
-    padding: 15px 60px;
-    background-color: whitesmoke;
-    font-size: 22px;
     border: none;
-    transition-duration: 0.5s;
+    color: #090909;
+    padding: 15px 10px;
+    font-size: 18px;
+    border-radius: 1.8em;
+    background: #e8e8e8;
+    border: 1px solid #e8e8e8;
+    transition: all 0.3s;
+    box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
 }
 
-.login-user .right .btn:hover {
-    background-color: #ffb740;
-    color: white;
+.login-user .right .btn-google:active {
+    color: #666;
+    box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
 }
 
 .login-user .right img.icon {
@@ -422,8 +415,8 @@ p {
         color: white;
     }
 
-    .login-user .right .content {
-        text-align: center;
+    .login-user .right .btn-google {
+        box-shadow: none;
     }
 }
 
@@ -431,6 +424,22 @@ p {
 @media (max-width: 767.98px) {
     .navbar .collapse ul li {
         text-align: center;
+    }
+
+    .login-user .left img {
+        max-width: 100%;
+    }
+
+    .login-user .right h2.title {
+        font-size: 43px;
+    }
+
+    .login-user .right h1.header {
+        font-size: 35px;
+    }
+
+    .login-user .right p {
+        font-size: 18px;
     }
 }
 
@@ -496,13 +505,13 @@ p {
 
 .story {
     font-weight: 600;
-    font-size: 16px;
+    font-size: 1.2rem;
     color: #ffc200;
 }
 
 .primary-header {
     font-weight: 600;
-    font-size: 30px;
+    font-size: 1.7rem;
     color: #211b3d;
 }
 
@@ -527,6 +536,7 @@ p {
 /* dashboard */
 .dashboard .btn-warning,
 .dashboard .btn-secondary,
+.dashboard .btn-primary,
 .dashboard .btn-success,
 .dashboard .btn-danger {
     padding: 10px 15px;

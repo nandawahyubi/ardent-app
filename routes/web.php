@@ -37,9 +37,11 @@ Route::middleware(['auth'])->group(function () {
     Route::get('checkout/success', [CheckoutController::class, 'success'])->name('checkout.success')->middleware('ensureUserRole:user');
     Route::get('checkout/{package:slug}', [CheckoutController::class, 'create'])->name('checkout.create')->middleware('ensureUserRole:user');
     Route::post('checkout/{package}', [CheckoutController::class, 'store'])->name('checkout.store')->middleware('ensureUserRole:user');
-    Route::get('checkout/update/{checkout:midtrans_booking_code}', [CheckoutController::class, 'edit'])->name('checkout.edit');
-    Route::put('checkout/{checkout:midtrans_booking_code}', [CheckoutController::class, 'update'])->name('checkout.update');
+    Route::get('checkout/update/{checkout:midtrans_booking_code}', [CheckoutController::class, 'edit'])->name('checkout.edit')->middleware('ensureUserRole:user');
+    Route::put('checkout/{checkout:midtrans_booking_code}', [CheckoutController::class, 'update'])->name('checkout.update')->middleware('ensureUserRole:user');
+    Route::put('update-file/{checkout:midtrans_booking_code}', [CheckoutController::class, 'file'])->name('update.file')->middleware('ensureUserRole:user');
     Route::delete('checkout/{checkout}', [CheckoutController::class, 'destroy'])->name('checkout.delete')->middleware('ensureUserRole:user');
+    Route::get('invoice/{checkout:midtrans_booking_code}', [UserDashboard::class, 'invoice'])->name('get.invoice');
     
     // dashboard
     Route::get('dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
@@ -48,7 +50,6 @@ Route::middleware(['auth'])->group(function () {
     Route::prefix('user/dashboard')->namespace('User')->name('user.')->middleware('ensureUserRole:user')->group(function () {
         Route::get('/', [UserDashboard::class, 'index'])->name('dashboard');
 
-        Route::get('invoice/{checkout:midtrans_booking_code}', [UserDashboard::class, 'invoice'])->name('get.invoice');
     });
 
     // admin dashboard

@@ -10,7 +10,7 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        $checkouts = Checkout::with('Package')->latest()->get();
+        $checkouts = Checkout::with('Package')->latest()->paginate(5);
         return view('admin.dashboard', [
             'checkouts' => $checkouts
         ]);

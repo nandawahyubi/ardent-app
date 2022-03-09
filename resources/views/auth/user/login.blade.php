@@ -20,14 +20,15 @@
                     <img src="{{ asset('img/banner-login.png') }}" alt="">
                 </div>
                 <div class="right col">
-                    <div class="content w-75 mb-5">
+                    <div class="content w-75 mb-4">
                         <h2 class="title pb-4 mb-2">Ardent Auto Detailing</h3>
-                        <h1 class="header">Start Today</h1>
-                        <h6 class="subheader pb-2 mb-1">Because tomorrow become never</h6>
+                            <h1 class="header">Start Today</h1>
+                            <h6 class="subheader pb-2 mb-1">Because tomorrow become never</h6>
                     </div>
-                    <a href="{{ route('user.login.google') }}" class="btn btn-light btn-google shadow w-75 d-flex justify-content-center">
-                        <img src="{{ asset('img/ic_google.svg') }}" alt="icon-google" class="icon">
-                        <p class="mx-3 mb-0 text-center">Sign In with Google</p>
+                    <a href="{{ route('user.login.google') }}"
+                        class="btn btn-google w-75 d-flex justify-content-center">
+                        <img src="{{ asset('img/ic_google.svg') }}" alt="icon-google" class="icon mx-2">
+                        <p class="mx-2 mb-0 text-center">Sign In with Google</p>
                     </a>
                     <div class="licensi">
                         Copyright © {{ date('Y') }}

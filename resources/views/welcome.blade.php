@@ -121,14 +121,14 @@
                     <div class="icon col-sm-6 col-md-4 col-lg-4">
                         <img src="{{ asset('img/icon/special.png') }}" alt="">
                         <span>
-                            Specialis dibidang salon mobil, nano ceramic coating, dan PPF sehingga hasil kerja lebih
+                            Specialis dibidang salon mobil, nano ceramic coating dan PPF sehingga hasil kerja lebih
                             terjamin
                         </span>
                     </div>
                     <div class="icon col-sm-6 col-md-4 col-lg-4">
                         <img src="{{ asset('img/icon/professional.png') }}" alt="">
                         <span>
-                            Dikerjakan oleh tim kerja yang berpengalaman lebih dari 10 tahun dibidangnya
+                            Tim kerja yang berpengalaman lebih dari 10 tahun dibidangnya
                         </span>
                     </div>
                     <div class="icon col-sm-6 col-md-4 col-lg-4">
@@ -154,7 +154,7 @@
                     <div class="icon col-sm-6 col-md-4 col-lg-4">
                         <img src="{{ asset('img/icon/customer.png') }}" alt="">
                         <span>
-                            Telah memiliki banyak customer yang puas atas hasil kerja kami dan menjadi pelanggan tetap kami
+                            Memiliki banyak customer yang puas atas hasil kerja kami dan menjadi pelanggan tetap
                         </span>
                     </div>
                 </div>
@@ -165,7 +165,7 @@
     <section id="process" class="process">
         <div class="container">
             <h1 class="text-center p-3">
-                Proses Pengerjaan <br> Nano Ceramic Coating Full Treatment
+                <span class="text-warning">Proses</span> Pengerjaan <br> Nano Ceramic Coating Full Treatment
             </h1>
             <div class="row text-center">
                 <h2>Day 1</h2>
@@ -343,14 +343,14 @@
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-md text-center">
-                        <h1>Berbagai Macam Aksesoris Mobil</h1>
-                        <p class="text-warning text-center">Kami juga menyediakan berbagai macam aksesoris mobil yang bisa
-                            anda beli di toko kami.
+                        <h1><span class="text-warning">Aksesoris</span> Mobil</h1>
+                        <p class="text-center">
+                            Berbagai macam aksesoris mobil yang dapat anda beli di toko kami
                         </p>
                     </div>
                 </div>
                 <div class="row justify-content-center">
-                    <div class="pembungkus col-8">
+                    <div class="pembungkus col-md-10 col-lg-8">
                         <div class="accordion" id="accordionPanelsStayOpenExample">
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="panelsStayOpen-headingOne">
@@ -363,15 +363,14 @@
                                 <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
                                     aria-labelledby="panelsStayOpen-headingOne">
                                     <div class="accordion-body text-center">
-                                        <img class="py-3" src="{{ asset('img/kain-microfiber.jpg') }}">
+                                        <img class="my-3 rounded shadow" src="{{ asset('img/kain-microfiber.jpg') }}">
                                         <p class="isi text-center pr-5 pl-5">Kami menawarkan kain microfiber sebagai alat
                                             untuk mengelap dan membersihkan mobil anda. Dengan kualitas superior, tanpa
-                                            garis pinggir, 40x lebih halus dari pada wol & 100x lebih halus dari pada rambut
-                                            manusia. Tingkat penyerapannya juga 7x lebih menyerap air dari pada kain biasa
-                                            atau kain yang terbuat dari karet. Sehingga akan cepat kering & meminimalisir
-                                            timbulnya bercak air yang membekas atau membentuk jamur pada body mobil.
-                                            Pemakaian Kain mocrofiber juga lebih awet, tidak menyimpan pasir, debu & kotoran
-                                            sehingga tidak akan menyebabkan baret.
+                                            garis pinggir, 40x lebih halus dari pada wol & 100x lebih halus <br> dari pada
+                                            rambut manusia. Tingkat penyerapannya juga 7x lebih menyerap air dari pada kain
+                                            biasa. Cepat kering & meminimalisir timbulnya bercak air yang membekas atau
+                                            membentuk jamur <br> pada body mobil. Pemakaian Kain mocrofiber juga lebih awet,
+                                            tidak menyimpan pasir, debu dan kotoran sehingga tidak akan menyebabkan baret.
                                         </p>
                                     </div>
                                 </div>
@@ -387,10 +386,10 @@
                                 <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
                                     aria-labelledby="panelsStayOpen-headingTwo">
                                     <div class="accordion-body text-center">
-                                        <img class="py-3" src="{{ asset('img/alas-kaki.jpg') }}">
-                                        <p class="isi text-center pr-5 pl-5">Kami menyediakan alas kaki dari brand ternama,
-                                            seperti Trapo, Comfort & D'luxe yang kualitasnya tak usah di ragukan lagi. Dan
-                                            sudah menjadi favorite & pilihan terbaik untuk alas kaki para carholic.
+                                        <img class="my-3 rounded shadow" src="{{ asset('img/alas-kaki.jpg') }}">
+                                        <p class="isi text-center pr-5 pl-5">Kami menyediakan alas kaki dari brand ternama
+                                            seperti : <br> Trapo, Comfort & D'luxe yang kualitasnya tak usah di ragukan lagi
+                                            <br> dan sudah menjadi favorite & pilihan terbaik untuk alas kaki para carholic.
                                         </p>
                                     </div>
                                 </div>
@@ -406,11 +405,12 @@
                                 <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse"
                                     aria-labelledby="panelsStayOpen-headingThree">
                                     <div class="accordion-body text-center">
-                                        <img class="py-3" src="{{ asset('img/kaca-film.jpg') }}">
-                                        <p class="isi text-center pr-5 pl-5">Kaca film yang kami tawarkan juga beragam, dan
-                                            ternama seperti : ORPRO Window Film, V-Gard, 3M Autofilm, WINCOS AUTOMOTIVE
-                                            FILMS, ICEBERG WINDOW FILMS, SOLAR BLACK WINDOW FILMS, Solar Gard PREMIUM, Solar
-                                            Gard WINDOW FILMS. Dengan proses pemasangannya yang detail, teliti, dan rapi.
+                                        <img class="my-3 rounded shadow" src="{{ asset('img/kaca-film.jpg') }}">
+                                        <p class="isi text-center pr-5 pl-5">Kaca film yang kami tawarkan juga beragam dan
+                                            ternama seperti : <br> Orpro Window Film, V-Gard, 3M Autofilm, Wincos Automotive
+                                            Films, Iceberg Window Films, <br> Solar Black Window Films, Solar Gard Premium,
+                                            Solar Gard Window Films <br> dengan proses pemasangannya yang detail, teliti dan
+                                            rapi.
                                         </p>
                                     </div>
                                 </div>
@@ -426,11 +426,10 @@
                                 <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse"
                                     aria-labelledby="panelsStayOpen-headingFour">
                                     <div class="accordion-body text-center">
-                                        <img class="py-3" src="{{ asset('img/jok-mobil.jpg') }}">
+                                        <img class="my-3 rounded shadow" src="{{ asset('img/jok-mobil.jpg') }}">
                                         <p class="isi text-center pr-5 pl-5">Jok mobil yang kami tawarkan terbuat dari
-                                            kulit
-                                            sintetis dengan kualitas terbaik, tekstur yang sangat halus, sehingga lebih
-                                            mudah di bersihkan, lebih awet, dan lebih kuat.
+                                            kulit sintetis dengan kualitas terbaik, <br> tekstur yang sangat halus, sehingga
+                                            lebih mudah di bersihkan, <br> lebih awet dan lebih kuat.
                                         </p>
                                     </div>
                                 </div>
@@ -451,7 +450,7 @@
                             Pilihan <span style="color: orange;">Harga Paket</span> Di Salon Mobil Kami
                         </h1>
                         <p class="text-center">Pilihan terbaik untuk anda yang membutuhkan layanan salon mobil dengan
-                            cepat <br> dan tentunya akurat dengan hasil yang memuaskan.
+                            cepat <br> dengan hasil yang memuaskan
                         </p>
                     </div>
                 </div>
@@ -463,15 +462,15 @@
                                     Paket Signature Nano Ceramic Coating by Crystal Shield
                                 </p>
                                 <div class="row text-center">
-                                    <div class="col-sm-4 col-md-4">
+                                    <div class="col-4 col-md-4">
                                         Small
                                         <h6>Rp 2.999.000</h6>
                                     </div>
-                                    <div class="col-sm-4 col-md-4">
+                                    <div class="col-4 col-md-4">
                                         Medium
                                         <h6>Rp 3.499.000</h6>
                                     </div>
-                                    <div class="col-sm-4 col-md-4">
+                                    <div class="col-4 col-md-4">
                                         Large
                                         <h6>Rp 3.999.000</h6>
                                     </div>
@@ -513,15 +512,15 @@
                                     Paket Signature Nano Crystal Based Coating by Crystal Shield
                                 </p>
                                 <div class="row text-center">
-                                    <div class="col-sm-4 col-md-4">
+                                    <div class="col-4 col-md-4">
                                         Small
                                         <h6>Rp 4.499.000</h6>
                                     </div>
-                                    <div class="col-sm-4 col-md-4">
+                                    <div class="col-4 col-md-4">
                                         Medium
                                         <h6>Rp 4.999.000</h6>
                                     </div>
-                                    <div class="col-sm-4 col-md-4">
+                                    <div class="col-4 col-md-4">
                                         Large
                                         <h6>Rp 5.499.000</h6>
                                     </div>
@@ -564,15 +563,15 @@
                                     Paket Signature Diamond Coating by Crystal Shield
                                 </p>
                                 <div class="row text-center">
-                                    <div class="col-sm-4 col-md-4 col-lg-4">
+                                    <div class="col-4 col-md-4 col-lg-4">
                                         Small
                                         <h6>Rp 5.999.000</h6>
                                     </div>
-                                    <div class="col-sm-4 col-md-4 col-lg-4">
+                                    <div class="col-4 col-md-4 col-lg-4">
                                         Medium
                                         <h6>Rp 6.999.000</h6>
                                     </div>
-                                    <div class="col-sm-4 col-md-4 col-lg-4">
+                                    <div class="col-4 col-md-4 col-lg-4">
                                         Large
                                         <h6>Rp 7.999.000</h6>
                                     </div>
@@ -613,60 +612,59 @@
                     <div class="col-sm col-md col-lg-8 col-xl-8 px-5">
                         <div class="alert alert-light bg-light mb-0 shadow" role="alert">
                             <h4 class="alert-heading text-center note" style="color: black;">
-                                Keterangan :
+                                Keterangan
                             </h4>
-                            <table class="table table-borderless text-center" style="color: black;">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">Small</th>
-                                        <th scope="col">Medium</th>
-                                        <th scope="col">Large</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td class="pt-0 pb-0">Agya, Jazz, Yaris, Brio, dll</td>
-                                        <td class="pt-0 pb-0">CRV, HRV, Innova, Rush, Almaz</td>
-                                        <td class="pt-0 pb-0">Fortuner, Pajero, Alphard, LC</td>
-                                    </tr>
-                                </tbody>
-                            </table>
                             <hr>
-                            <div class="row justify-content-center">
-                                <ul class="text-center">
-                                    <li class="fw-bold">Semua paket diatas sudah termasuk : </li>
-                                    <li>
-                                        <i class="far fa-check-circle"></i> Premium wash
-                                    </li>
-                                    <li>
-                                        <i class="far fa-check-circle"></i> Dekontaminasi kimia bodi mobil (pembersihan
-                                        getah, aspal, dll)
-                                    </li>
-                                    <li>
-                                        <i class="far fa-check-circle"></i> Exterior detailing (pembersihan kerak2 dan
-                                        jamur)
-                                    </li>
-                                    <li>
-                                        <i class="far fa-check-circle"></i> Interior detailing (pembersihan daki2 interior)
-                                    </li>
-                                    <li>
-                                        <i class="far fa-check-circle"></i> Mesin bay detailing (pembersihan ruang mesin)
-                                    </li>
-                                    <li>
-                                        <i class="far fa-check-circle"></i> Paint correction (polish mobil 3 step sampai
-                                        catnya bersih dan memunculkan warna asli mobil)
-                                    </li>
-                                    <li>
-                                        <i class="far fa-check-circle"></i> Coating Nano Ceramic 3 layer sesuai paket yg
-                                        diambil
-                                    </li>
-                                    <li>
-                                        <i class="far fa-check-circle"></i> Finishing
-                                    </li>
-                                    <li class="fw-bold">
-                                        Proses 3 - 4 hari kerja
-                                    </li>
-                                </ul>
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <table class="table table-borderless align-middle">
+                                        <tr>
+                                            <th>Small</th>
+                                            <td colspan="2" class="pt-0 pb-0">Agya, Jazz, Yaris,
+                                                Brio, dll</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Medium</th>
+                                            <td colspan="2" class="pt-0 pb-0">CRV, HRV, Innova, Rush, Almaz, dll</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Large</th>
+                                            <td colspan="2" class="pt-0 pb-0">Fortuner, Pajero, Alphard, LC, dll</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="col-md-7">
+                                    <ul class="text-start lh-lg">
+                                        <li class="fw-bold text-dark">Semua paket diatas sudah termasuk : </li>
+                                        <li>
+                                            <i class="far fa-check-circle"></i> Premium wash
+                                        </li>
+                                        <li>
+                                            <i class="far fa-check-circle"></i> Chemical Decontamination
+                                        </li>
+                                        <li>
+                                            <i class="far fa-check-circle"></i> Exterior detailing
+                                        </li>
+                                        <li>
+                                            <i class="far fa-check-circle"></i> Interior detailing
+                                        </li>
+                                        <li>
+                                            <i class="far fa-check-circle"></i> Machine bay detailing
+                                        </li>
+                                        <li>
+                                            <i class="far fa-check-circle"></i> Paint correction
+                                        </li>
+                                        <li>
+                                            <i class="far fa-check-circle"></i> Coating Nano Ceramic 3 layer
+                                        </li>
+                                        <li>
+                                            <i class="far fa-check-circle"></i> Finishing
+                                        </li>
+                                        <li class="fw-bold text-dark">
+                                            Proses 3 - 4 hari kerja
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -686,7 +684,7 @@
             </div>
             <div class="row align-items-center">
                 <div class="col-md-7 px-5">
-                    <button class="accordion">
+                    <button class="accordion-btn">
                         Apa poin penting keunggulan coating ?
                     </button>
                     <div class="panel">
@@ -699,7 +697,7 @@
                             - Cat terlihat basah, kilat, tebal dan baru.
                         </p>
                     </div>
-                    <button class="accordion">
+                    <button class="accordion-btn">
                         Kenapa harus memilih coating? Apa bedanya dengan wax ?
                     </button>
                     <div class="panel">
@@ -735,7 +733,7 @@
         <div class="container-fluid">
             <div class="footer-parent p-4">
                 <div class="row">
-                    <div class="col">
+                    <div class="col align-">
                         <a class="logo-footer" href="{{ route('welcome') }}">
                             <img src="{{ asset('img/logo-navbar.png') }}" alt="logo">
                         </a>
@@ -744,9 +742,10 @@
                 <div class="row justify-content-between align-items-center">
                     <div class="col-6">
                         <div class="footer-child">
-                            <p class="text-light mb-0">Ardent Auto Detailing adalah workshop otomotif</p>
-                            <p class="text-light mb-0">dikota medan yang berlokasikan di komplek</p>
-                            <p class="text-light mb-0">Cemara Asri Jl. Boulevard Timur No. 88G</p>
+                            {{-- <p class="text-light mb-0">Ardent Auto Detailing adalah workshop otomotif</p> --}}
+                            <p class="text-light mb-0">Workshop otomotif yang berlokasikan <br> di komplek Cemara Asri Jl.
+                                Boulevard Timur No. 88G</p>
+                            {{-- <p class="text-light mb-0">Cemara Asri Jl. Boulevard Timur No. 88G</p> --}}
                         </div>
                     </div>
                     <div class="col-6">
