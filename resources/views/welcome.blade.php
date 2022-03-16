@@ -53,7 +53,7 @@
         </div>
     </section>
 
-    <section id="about" class="about">
+    <section id="about" class="about" style="background: #F6F6F6;">
         <div class="container pt-3">
             <h1 class="mb-4">ardent auto detailing</h1>
         </div>
@@ -162,7 +162,7 @@
         </div>
     </section>
 
-    <section id="process" class="process">
+    <section id="process" class="process" style="background: #F6F6F6;">
         <div class="container">
             <h1 class="text-center p-3">
                 <span class="text-warning">Proses</span> Pengerjaan <br> Nano Ceramic Coating Full Treatment
@@ -241,17 +241,17 @@
                 </div>
             </div>
             <div class="row text-center">
-                <h2 class="mb-0">Day 4</h2>
+                <h2>Day 4</h2>
             </div>
             <div class="row pb-3 px-3 d-flex justify-content-center flex-column">
                 <div class="col-md-4 align-self-center text-center">
-                    <ul class="pt-3 pb-2">
+                    <ul class="py-2 px-0">
                         <li>
                             <i class="far fa-check-circle"></i> Delivery to customer
                         </li>
                     </ul>
                 </div>
-                <div class="col-md-4 align-self-center">
+                <div class="col-md-4 align-self-center pb-3">
                     <img src="{{ asset('img/delivery-to-customer.jpg') }}" alt="" class="w-100 rounded-3 shadow">
                 </div>
             </div>
@@ -259,7 +259,7 @@
     </section>
 
     <section id="portfolio" class="portfolio">
-        <div class="container-fluid mt-5 px-4">
+        <div class="container-fluid px-4">
             <div class="container">
                 <div class="row mr-0 ml-0 text-center pb-4">
                     <div class="col-md">
@@ -338,8 +338,8 @@
         </div>
     </section>
 
-    <section id="product" class="product">
-        <div class="container-fluid py-5">
+    <section id="product" class="product" style="background: #F6F6F6;">
+        <div class="container-fluid pt-4 pb-5">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-md text-center">
@@ -463,39 +463,53 @@
                                 </p>
                                 <div class="row text-center">
                                     <div class="col-4 col-md-4">
-                                        Small
+                                        <span
+                                            class="vehicle-size border border-end-0 border-top-0 border-success border-3 px-1">Small</span>
                                         <h6>Rp 2.999.000</h6>
                                     </div>
                                     <div class="col-4 col-md-4">
-                                        Medium
+                                        <span
+                                            class="vehicle-size border border-end-0 border-top-0 border-warning border-3 px-1">Medium</span>
                                         <h6>Rp 3.499.000</h6>
                                     </div>
                                     <div class="col-4 col-md-4">
-                                        Large
+                                        <span
+                                            class="vehicle-size border border-end-0 border-top-0 border-danger border-3 px-1">Large</span>
                                         <h6>Rp 3.999.000</h6>
                                     </div>
                                 </div>
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">
-                                        <i class="far fa-check-circle"></i> Ketahanan Coating 3 Year, 1 Year Warranty
+                                <ol class="list-group list-group-flush list-group-numbered">
+                                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                                        <div class="ms-2 me-auto">
+                                            Ketahanan Coating 3 Year, 1 Year Warranty
+                                        </div>
                                     </li>
-                                    <li class="list-group-item">
-                                        <i class="far fa-check-circle"></i> Fitur Coating Glossy, Warna Lebih Terangkat &
-                                        Hydrophobic
+                                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                                        <div class="ms-2 me-auto">
+                                            Fitur Coating Glossy, Warna Lebih Terangkat & Hydrophobic
+                                        </div>
                                     </li>
-                                    <li class="list-group-item">
-                                        <i class="far fa-check-circle"></i> Area coating : Semua Bagian Exterior
+                                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                                        <div class="ms-2 me-auto">
+                                            Area coating : Semua Bagian Exterior
+                                        </div>
                                     </li>
-                                    <li class="list-group-item">
-                                        <i class="far fa-check-circle"></i> Detailing Exterior & Paint Correction 3 Steps
+                                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                                        <div class="ms-2 me-auto">
+                                            Detailing Exterior & Paint Correction 3 steps
+                                        </div>
                                     </li>
-                                    <li class="list-group-item">
-                                        <i class="far fa-check-circle"></i> Interior & Machine Bay Detailing
+                                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                                        <div class="ms-2 me-auto">
+                                            Interior & Machine Bay Detailing
+                                        </div>
                                     </li>
-                                    <li class="list-group-item">
-                                        <i class="far fa-check-circle"></i> Finishing
+                                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                                        <div class="ms-2 me-auto">
+                                            Finishing
+                                        </div>
                                     </li>
-                                </ul>
+                                </ol>
                                 <div class="row justify-content-center my-3">
                                     <a href="{{ route('checkout.create', 'signature-nano-ceramic-coating') }}"
                                         class="btn btn-warning rounded-pill text-light w-75">
@@ -513,40 +527,53 @@
                                 </p>
                                 <div class="row text-center">
                                     <div class="col-4 col-md-4">
-                                        Small
+                                        <span
+                                            class="vehicle-size border border-end-0 border-top-0 border-success border-3 px-1">Small</span>
                                         <h6>Rp 4.499.000</h6>
                                     </div>
                                     <div class="col-4 col-md-4">
-                                        Medium
+                                        <span
+                                            class="vehicle-size border border-end-0 border-top-0 border-warning border-3 px-1">Medium</span>
                                         <h6>Rp 4.999.000</h6>
                                     </div>
                                     <div class="col-4 col-md-4">
-                                        Large
+                                        <span
+                                            class="vehicle-size border border-end-0 border-top-0 border-danger border-3 px-1">Large</span>
                                         <h6>Rp 5.499.000</h6>
                                     </div>
                                 </div>
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">
-                                        <i class="far fa-check-circle"></i> Ketahanan Coating 3-5 Year, 2 Year Warranty
+                                <ol class="list-group list-group-flush list-group-numbered">
+                                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                                        <div class="ms-2 me-auto">
+                                            Ketahanan Coating 5 Year, 3 Year Warranty
+                                        </div>
                                     </li>
-                                    <li class="list-group-item">
-                                        <i class="far fa-check-circle"></i> Fitur Coating Super Glossy (Seperti Kaca) &
-                                        Hydrophobic
+                                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                                        <div class="ms-2 me-auto">
+                                            Fitur Coating Super Glossy (Seperti Kaca) & Hydrophobic
+                                        </div>
                                     </li>
-                                    <li class="list-group-item">
-                                        <i class="far fa-check-circle"></i> Area coating : Semua Bagian Exterior & Bagian
-                                        Interior Yang Berbahan Kulit
+                                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                                        <div class="ms-2 me-auto">
+                                            Area coating : Semua Bagian Exterior & Bagian Interior Yang Berbahan Kulit
+                                        </div>
                                     </li>
-                                    <li class="list-group-item">
-                                        <i class="far fa-check-circle"></i> Detailing Exterior & Paint Correction 3 steps
+                                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                                        <div class="ms-2 me-auto">
+                                            Detailing Exterior & Paint Correction 3 steps
+                                        </div>
                                     </li>
-                                    <li class="list-group-item">
-                                        <i class="far fa-check-circle"></i> Interior & Machine Bay Detailing
+                                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                                        <div class="ms-2 me-auto">
+                                            Interior & Machine Bay Detailing
+                                        </div>
                                     </li>
-                                    <li class="list-group-item">
-                                        <i class="far fa-check-circle"></i> Finishing
+                                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                                        <div class="ms-2 me-auto">
+                                            Finishing
+                                        </div>
                                     </li>
-                                </ul>
+                                </ol>
                                 <div class="row justify-content-center my-3">
                                     <a href="{{ route('checkout.create', 'signature-nano-crystal-based-coating') }}"
                                         class="btn btn-warning rounded-pill text-light w-75">
@@ -557,50 +584,63 @@
                         </div>
                     </div>
                     <div class="col-md-6 col-lg mb-5">
-                        <div class="card-service card bg-warning">
+                        <div class="card-service card border border-warning border-4">
                             <div class="card-body">
                                 <p class="fw-bold text-center">
                                     Paket Signature Diamond Coating by Crystal Shield
                                 </p>
                                 <div class="row text-center">
                                     <div class="col-4 col-md-4 col-lg-4">
-                                        Small
+                                        <span
+                                            class="vehicle-size border border-end-0 border-top-0 border-success border-3 px-1">Small</span>
                                         <h6>Rp 5.999.000</h6>
                                     </div>
                                     <div class="col-4 col-md-4 col-lg-4">
-                                        Medium
+                                        <span
+                                            class="vehicle-size border border-end-0 border-top-0 border-warning border-3 px-1">Medium</span>
                                         <h6>Rp 6.999.000</h6>
                                     </div>
                                     <div class="col-4 col-md-4 col-lg-4">
-                                        Large
+                                        <span
+                                            class="vehicle-size border border-end-0 border-top-0 border-danger border-3 px-1">Large</span>
                                         <h6>Rp 7.999.000</h6>
                                     </div>
                                 </div>
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item bg-warning">
-                                        <i class="far fa-check-circle"></i> Ketahanan Coating 5 Year, 3 Year Warranty
+                                <ol class="list-group list-group-flush list-group-numbered">
+                                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                                        <div class="ms-2 me-auto">
+                                            Ketahanan Coating 5 Year, 3 Year Warranty
+                                        </div>
                                     </li>
-                                    <li class="list-group-item bg-warning">
-                                        <i class="far fa-check-circle"></i> Fitur Coating Warna Cat Terlihat Basah
-                                        (Wetlook), Glossy, Deep & Hydrophobic
+                                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                                        <div class="ms-2 me-auto">
+                                            Fitur Coating Warna Cat Terlihat Basah (Wetlook), Glossy, Deep & Hydrophobic
+                                        </div>
                                     </li>
-                                    <li class="list-group-item bg-warning">
-                                        <i class="far fa-check-circle"></i> Area coating : Semua Bagian Exterior & Bagian
-                                        Interior Yang Berbahan Kulit
+                                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                                        <div class="ms-2 me-auto">
+                                            Area coating : Semua Bagian Exterior & Bagian Interior Yang Berbahan Kulit
+                                        </div>
                                     </li>
-                                    <li class="list-group-item bg-warning">
-                                        <i class="far fa-check-circle"></i> Detailing Exterior & Paint Correction 3 steps
+                                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                                        <div class="ms-2 me-auto">
+                                            Detailing Exterior & Paint Correction 3 steps
+                                        </div>
                                     </li>
-                                    <li class="list-group-item bg-warning">
-                                        <i class="far fa-check-circle"></i> Interior & Machine Bay Detailing
+                                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                                        <div class="ms-2 me-auto">
+                                            Interior & Machine Bay Detailing
+                                        </div>
                                     </li>
-                                    <li class="list-group-item bg-warning">
-                                        <i class="far fa-check-circle"></i> Finishing
+                                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                                        <div class="ms-2 me-auto">
+                                            Finishing
+                                        </div>
                                     </li>
-                                </ul>
+                                </ol>
                                 <div class="row justify-content-center my-3">
                                     <a href="{{ route('checkout.create', 'signature-diamond-coating') }}"
-                                        class="btn btn-light rounded-pill text-warning w-75">
+                                        class="btn btn-warning rounded-pill text-light w-75">
                                         choose this package
                                     </a>
                                 </div>
@@ -617,48 +657,48 @@
                             <hr>
                             <div class="row">
                                 <div class="col-md-5">
-                                    <table class="table table-borderless align-middle">
+                                    <table class="table table-borderless">
                                         <tr>
                                             <th>Small</th>
-                                            <td colspan="2" class="pt-0 pb-0">Agya, Jazz, Yaris,
+                                            <td colspan="2">Agya, Jazz, Yaris,
                                                 Brio, dll</td>
                                         </tr>
                                         <tr>
                                             <th>Medium</th>
-                                            <td colspan="2" class="pt-0 pb-0">CRV, HRV, Innova, Rush, Almaz, dll</td>
+                                            <td colspan="2">CRV, HRV, Innova, Rush, Almaz, dll</td>
                                         </tr>
                                         <tr>
                                             <th>Large</th>
-                                            <td colspan="2" class="pt-0 pb-0">Fortuner, Pajero, Alphard, LC, dll</td>
+                                            <td colspan="2">Fortuner, Pajero, Alphard, LC, dll</td>
                                         </tr>
                                     </table>
                                 </div>
                                 <div class="col-md-7">
-                                    <ul class="text-start lh-lg">
+                                    <ul class="text-start lh-lg list-unstyled">
                                         <li class="fw-bold text-dark">Semua paket diatas sudah termasuk : </li>
                                         <li>
-                                            <i class="far fa-check-circle"></i> Premium wash
+                                            <img src="{{ asset('img/ic_check.svg') }}"> Premium wash
                                         </li>
                                         <li>
-                                            <i class="far fa-check-circle"></i> Chemical Decontamination
+                                            <img src="{{ asset('img/ic_check.svg') }}"> Chemical Decontamination
                                         </li>
                                         <li>
-                                            <i class="far fa-check-circle"></i> Exterior detailing
+                                            <img src="{{ asset('img/ic_check.svg') }}"> Exterior detailing
                                         </li>
                                         <li>
-                                            <i class="far fa-check-circle"></i> Interior detailing
+                                            <img src="{{ asset('img/ic_check.svg') }}"> Interior detailing
                                         </li>
                                         <li>
-                                            <i class="far fa-check-circle"></i> Machine bay detailing
+                                            <img src="{{ asset('img/ic_check.svg') }}"> Machine bay detailing
                                         </li>
                                         <li>
-                                            <i class="far fa-check-circle"></i> Paint correction
+                                            <img src="{{ asset('img/ic_check.svg') }}"> Paint correction
                                         </li>
                                         <li>
-                                            <i class="far fa-check-circle"></i> Coating Nano Ceramic 3 layer
+                                            <img src="{{ asset('img/ic_check.svg') }}"> Coating Nano Ceramic 3 layer
                                         </li>
                                         <li>
-                                            <i class="far fa-check-circle"></i> Finishing
+                                            <img src="{{ asset('img/ic_check.svg') }}"> Finishing
                                         </li>
                                         <li class="fw-bold text-dark">
                                             Proses 3 - 4 hari kerja
