@@ -266,7 +266,7 @@
                                         </tr>
                                     @empty
                                         <tr>
-                                            <td colspan="6" class="text-center">No Booking Register</td>
+                                            <td colspan="7" class="text-center">No Booking Register</td>
                                         </tr>
                                     @endforelse
                                 </tbody>
