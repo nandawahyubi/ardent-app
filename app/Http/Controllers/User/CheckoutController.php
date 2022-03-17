@@ -191,7 +191,7 @@ class CheckoutController extends Controller
             'id'        => $orderId,
             'price'     => $price,
             'quantity'  => '1',
-            'name'      => "Payment for {$checkout->Package->title} Package"
+            'name'      => "{$checkout->Package->title} Package"
         ];
 
         $userData = [

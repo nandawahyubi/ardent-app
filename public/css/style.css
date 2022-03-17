@@ -381,13 +381,22 @@ p {
     }
 
     .about h1 {
-        font-size: 40px !important;
+        font-size: 35.7px !important;
         font-weight: 600 !important;
         text-transform: capitalize;
     }
 
+    .about ul {
+        padding-left: 0;
+    }
+
     .banner {
         padding: 0 0 20px 0;
+    }
+
+    .banner .header {
+        margin-top: 10px;
+        font-size: 34px;
     }
 
     .product .pembungkus {
@@ -534,6 +543,7 @@ p {
 
 /* dashboard */
 .dashboard .btn-warning,
+.dashboard .btn-info,
 .dashboard .btn-secondary,
 .dashboard .btn-primary,
 .dashboard .btn-success,

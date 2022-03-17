@@ -13,6 +13,7 @@
     <link rel="shortcut icon" href="{{ asset('img/logo-navbar.png') }}" />
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@9.17.2/dist/sweetalert2.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/dt-1.11.5/datatables.min.css" />
 
     <title>Ardent Auto Detailing</title>
 </head>
@@ -32,8 +33,10 @@
     <script src="{{ asset('js/accordion.js') }}"></script>
     <script src="{{ asset('js/datepicker.js') }}"></script>
     <script src="{{ asset('js/sweetalert.js') }}"></script>
+    <script src="{{ asset('js/datatables.js') }}"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.17.2/dist/sweetalert2.all.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs5/dt-1.11.5/datatables.min.js"></script>
 
 </body>
 

@@ -55,7 +55,7 @@
 
     <section id="about" class="about" style="background: #F6F6F6;">
         <div class="container pt-3">
-            <h1 class="mb-4">ardent auto detailing</h1>
+            <h1 class="mb-3">ardent auto detailing</h1>
         </div>
         <div class="parent">
             <div class="container">
@@ -64,9 +64,9 @@
                         <p>Ardent Auto Detailing adalah workshop otomotif di kota Medan yang khusus melakukan makeover dan
                             salon mobil melalui teknologi Nano Ceramic dan turunannya.
                         </p>
-                        <span class="about pt-2 pb-1">
+                        <p class="py-2 mb-0">
                             Adapun jasa - jasa yang kami tawarkan yakni :
-                        </span>
+                        </p>
                         <ul class="pl-3">
                             <li>
                                 <strong>
